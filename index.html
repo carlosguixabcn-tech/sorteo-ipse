@@ -1,0 +1,2563 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteo Fin de Curso · 4º ESO Escola IPSE Barcelona</title>
+    <!-- Favicon personalizado del sorteo para la pestaña del navegador -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230f172a'/%3E%3Crect x='10' y='16' width='44' height='32' rx='6' fill='%23fbbf24'/%3E%3Ccircle cx='10' cy='32' r='5' fill='%230f172a'/%3E%3Ccircle cx='54' cy='32' r='5' fill='%230f172a'/%3E%3Ctext x='32' y='37' text-anchor='middle' font-family='sans-serif' font-weight='900' font-size='15' fill='%230f172a'%3EIPSE%3C/text%3E%3C/svg%3E">
+    <meta name="description" content="Participa por 3 € en el sorteo oficial de la ONCE del 24 de junio con Carlos, Ángel, Albert, Walter y Claudio (4º ESO Escola IPSE Barcelona). Elige entre Crucero para 2, PC Mac, iPhone, PS5 y más.">
+    <!-- Etiquetas Open Graph para previsualización enriquecida en WhatsApp y redes -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Sorteo Viaje Fin de Curso · 4º ESO Escola IPSE Barcelona">
+    <meta property="og:description" content="Mira con esperanza al 24 de junio con la ONCE: por 3 € (cada 6 tickets, 1 GRATIS) elige entre Crucero para 2, PC Mac, iPhone, PS5 y más.">
+    <meta property="og:url" content="https://strong-alfajores-5a12d3.netlify.app/">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80">
+    <!-- Tailwind CSS con soporte de modo oscuro por clase -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        };
+    </script>
+    <!-- Tipografías limpias y modernas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+    <!-- Iconos Phosphor -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3, .font-display {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        @keyframes typing-dot {
+            0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+            40% { transform: scale(1); opacity: 1; }
+        }
+        .thinking-dot {
+            animation: typing-dot 1.2s infinite ease-in-out both;
+        }
+        .thinking-dot:nth-child(2) { animation-delay: 0.2s; }
+        .thinking-dot:nth-child(3) { animation-delay: 0.4s; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-200 selection:bg-amber-300 selection:text-slate-950">
+
+    <!-- CONFIGURACIÓN GLOBAL DEL SORTEO -->
+    <script>
+        const CONFIG_SORTEO = {
+            // Enlace público oficial desplegado en Netlify
+            urlOficial: "https://strong-alfajores-5a12d3.netlify.app/",
+            precioPorTicket: 3,
+            promoCada: 6, // Cada 6 tickets pagados -> 1 gratis
+            fechaSorteo: "2027-06-24T21:30:00",
+            correoReclamacion: "info@byebyegroup.com",
+            contacto: {
+                nombre: "Carlos",
+                telefonoWhatsApp: "34672890854",
+                telefonoLegible: "672 89 08 54"
+            }
+        };
+    </script>
+
+    <!-- CABECERA FIJA ADAPTADA A MÓVIL Y ESCRITORIO -->
+    <header class="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-800 transition-colors">
+        <!-- Franja superior con los 4 colores oficiales de las papeletas -->
+        <div class="h-1.5 w-full grid grid-cols-4 overflow-hidden">
+            <div class="bg-[#FBBF24]"></div>
+            <div class="bg-[#EC4899]"></div>
+            <div class="bg-[#38BDF8]"></div>
+            <div class="bg-[#22C55E]"></div>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-3 sm:px-6 py-2.5 min-h-[64px] flex items-center justify-between gap-2">
+            <!-- Identidad Escola IPSE -->
+            <a href="#inicio" class="flex items-center gap-2.5 text-left group min-w-0 flex-1">
+                <div class="w-9 h-9 rounded-xl bg-slate-900 dark:bg-amber-400 text-amber-300 dark:text-slate-950 flex items-center justify-center shadow-sm shrink-0 group-hover:scale-105 transition-transform">
+                    <i class="ph-fill ph-ticket text-lg"></i>
+                </div>
+                <div class="min-w-0">
+                    <span data-i18n="headerTitle" class="font-display font-extrabold text-xs sm:text-base text-slate-900 dark:text-white block truncate leading-snug">
+                        Viaje Fin de Curso · Escola IPSE
+                    </span>
+                    <span data-i18n="headerSub" class="text-[11px] font-medium text-slate-500 dark:text-slate-400 block truncate leading-snug">
+                        4º ESO Barcelona · Carlos (672 89 08 54)
+                    </span>
+                </div>
+            </a>
+
+            <!-- Enlaces rápidos en escritorio -->
+            <nav class="hidden lg:flex items-center gap-5 text-sm font-semibold text-slate-600 dark:text-slate-300 shrink-0" aria-label="Secciones">
+                <a href="#hucha" data-i18n="navPiggy" class="hover:text-slate-900 dark:hover:text-white transition-colors">Hucha</a>
+                <a href="#premios" data-i18n="navPrizes" class="hover:text-slate-900 dark:hover:text-white transition-colors">Premios</a>
+                <a href="#tickets" data-i18n="navTickets" class="hover:text-slate-900 dark:hover:text-white transition-colors">Tickets</a>
+                <a href="#bases" data-i18n="navRules" class="hover:text-slate-900 dark:hover:text-white transition-colors">Bases Legales</a>
+                <a href="#como-funciona" data-i18n="navDelivery" class="hover:text-slate-900 dark:hover:text-white transition-colors">Cómo Funciona</a>
+                <a href="#pedir" data-i18n="navOrder" class="hover:text-slate-900 dark:hover:text-white transition-colors">Pedir</a>
+            </nav>
+
+            <!-- Barra de herramientas: Idioma, Música, Pantalla Grande, Tema y Compartir -->
+            <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
+                <!-- Selector de idioma ES / CA / EN -->
+                <div class="flex items-center bg-slate-100 dark:bg-slate-800 p-0.5 rounded-xl border border-slate-200/80 dark:border-slate-700" role="group" aria-label="Idioma">
+                    <button type="button" data-lang-btn="es" class="lang-btn px-2 py-1 rounded-lg text-[11px] font-extrabold transition-colors bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-sm">ES</button>
+                    <button type="button" data-lang-btn="ca" class="lang-btn px-2 py-1 rounded-lg text-[11px] font-extrabold transition-colors text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white">CA</button>
+                    <button type="button" data-lang-btn="en" class="lang-btn px-2 py-1 rounded-lg text-[11px] font-extrabold transition-colors text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white">EN</button>
+                </div>
+
+                <!-- Botón Música Ambiente -->
+                <button type="button" id="btn-music" title="Música ambiente" aria-label="Música ambiente" class="w-9 h-9 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 flex items-center justify-center shadow-sm transition-colors">
+                    <i id="music-icon" class="ph-bold ph-speaker-simple-slash text-base"></i>
+                </button>
+
+                <!-- Botón Modo Pantalla Grande (Fullscreen) -->
+                <button type="button" id="btn-fullscreen" title="Modo pantalla grande" aria-label="Modo pantalla grande" class="w-9 h-9 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 flex items-center justify-center shadow-sm transition-colors">
+                    <i id="fullscreen-icon" class="ph-bold ph-corners-out text-base"></i>
+                </button>
+
+                <!-- Botón Modo Claro / Oscuro -->
+                <button type="button" id="btn-theme" title="Cambiar modo claro/oscuro" aria-label="Cambiar modo claro/oscuro" class="w-9 h-9 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-amber-300 flex items-center justify-center shadow-sm transition-colors">
+                    <i id="theme-icon" class="ph-bold ph-moon text-base"></i>
+                </button>
+
+                <!-- Botón Compartir -->
+                <button type="button" data-open-share aria-label="Compartir" class="px-2.5 sm:px-3.5 h-9 rounded-xl bg-slate-900 dark:bg-amber-400 hover:bg-slate-800 dark:hover:bg-amber-300 text-white dark:text-slate-950 font-bold text-xs sm:text-sm transition-all flex items-center gap-1.5 shadow-sm">
+                    <i class="ph-bold ph-share-network text-base"></i>
+                    <span data-i18n="btnShare" class="hidden sm:inline">Compartir</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Barra de navegación rápida horizontal en móvil y tablet -->
+        <nav class="lg:hidden border-t border-slate-100 dark:border-slate-800/80 bg-slate-50/90 dark:bg-slate-900/90 px-3 py-2 flex items-center justify-start sm:justify-center gap-2 overflow-x-auto no-scrollbar text-xs font-bold text-slate-600 dark:text-slate-300" aria-label="Navegación rápida móvil">
+            <a href="#hucha" data-i18n="navPiggy" class="px-3 py-1.5 rounded-full bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 hover:border-slate-400 whitespace-nowrap shrink-0 transition-colors">Hucha</a>
+            <a href="#premios" data-i18n="navPrizes" class="px-3 py-1.5 rounded-full bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 hover:border-slate-400 whitespace-nowrap shrink-0 transition-colors">Premios</a>
+            <a href="#tickets" data-i18n="navTickets" class="px-3 py-1.5 rounded-full bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 hover:border-slate-400 whitespace-nowrap shrink-0 transition-colors">Tickets</a>
+            <a href="#bases" data-i18n="navRules" class="px-3 py-1.5 rounded-full bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 hover:border-slate-400 whitespace-nowrap shrink-0 transition-colors">Bases Legales</a>
+            <a href="#como-funciona" data-i18n="navDelivery" class="px-3 py-1.5 rounded-full bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 hover:border-slate-400 whitespace-nowrap shrink-0 transition-colors">Cómo Funciona</a>
+            <a href="#pedir" data-i18n="navOrder" class="px-3 py-1.5 rounded-full bg-slate-900 dark:bg-amber-400 text-white dark:text-slate-950 whitespace-nowrap shrink-0 transition-colors">Pedir</a>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="flex-1">
+
+        <!-- ========================================================= -->
+        <!-- 1. PORTADA PRINCIPAL (HERO) CON SOL RADIANTE Y ESPERANZA  -->
+        <!-- ========================================================= -->
+        <section id="inicio" class="scroll-mt-28 py-12 sm:py-20 px-4 sm:px-6">
+            <div class="max-w-5xl mx-auto text-center space-y-8">
+                
+                <!-- Etiqueta curso -->
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-100/80 dark:bg-amber-950/60 border border-amber-300/80 dark:border-amber-800/70 text-amber-950 dark:text-amber-200 text-xs font-extrabold">
+                    <i class="ph-fill ph-graduation-cap text-base text-amber-600 dark:text-amber-400"></i>
+                    <span data-i18n="heroBadge">Alumnos de 4º de ESO · Escola IPSE Barcelona</span>
+                </div>
+
+                <!-- Título principal y subtítulo esperanzador -->
+                <div class="max-w-3xl mx-auto space-y-4">
+                    <h1 data-i18n-html="heroTitle" class="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white tracking-tight leading-[1.12]">
+                        Gana un <span class="underline decoration-amber-400 decoration-4 underline-offset-4">crucero</span> o elige el premio que prefieras, solo por 3 €
+                    </h1>
+                    <p data-i18n-html="heroSubtitle" class="text-base sm:text-lg font-semibold text-slate-800 dark:text-slate-200 max-w-2xl mx-auto leading-relaxed">
+                        Mira con esperanza y deja que la suerte te sorprenda: este 24 de junio con la ONCE, el premio que prefieras puede ser tuyo mientras impulsas nuestro viaje de fin de curso.
+                    </p>
+                    <p data-i18n-html="heroDesc" class="text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed">
+                        Somos <strong>Carlos, Ángel, Albert, Walter y Claudio</strong>, alumnos de <strong>4º de ESO de l'Escola IPSE</strong> recaudando fondos para nuestro viaje de fin de curso. Participa por solo <strong>3 €</strong> en el sorteo oficial de la <strong>ONCE del 24 de junio</strong>.
+                    </p>
+                </div>
+
+                <!-- Sol dorado radiante y esperanzador en un cielo luminoso abierto -->
+                <div class="max-w-3xl mx-auto overflow-hidden rounded-2xl border border-amber-200/80 dark:border-slate-800 shadow-lg bg-amber-50 dark:bg-slate-900">
+                    <img
+                        src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1400&q=85"
+                        alt="Sol dorado radiante y esperanzador brillando con rayos cálidos en un cielo abierto"
+                        onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1400&q=85';"
+                        class="w-full h-52 sm:h-64 md:h-72 object-cover"
+                    >
+                </div>
+
+                <!-- Sellos / Logos Oficiales: Bye Bye Group y ONCE -->
+                <div class="flex flex-wrap items-center justify-center gap-4">
+                    <div class="flex items-center gap-3 px-4 py-2.5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+                        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 via-pink-500 to-sky-500 text-white flex items-center justify-center font-black text-lg shadow-inner">
+                            🍍
+                        </div>
+                        <div class="text-left">
+                            <span class="font-display font-black text-sm text-slate-900 dark:text-white block leading-tight">bye bye group</span>
+                            <span data-i18n="logoBBGSub" class="text-[11px] font-medium text-slate-500 dark:text-slate-400 block">Organizador oficial del sorteo</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-3 px-4 py-2.5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+                        <div class="px-3 py-1.5 rounded-xl bg-[#008542] border-2 border-[#FFD100] text-white font-display font-black text-base tracking-wider shadow-inner">
+                            ONCE
+                        </div>
+                        <div class="text-left">
+                            <span data-i18n="logoONCETitle" class="font-bold text-sm text-slate-900 dark:text-white block leading-tight">Cupón Diario · 24 Junio</span>
+                            <span data-i18n="logoONCESub" class="text-[11px] font-medium text-slate-500 dark:text-slate-400 block">Coincidencia exacta de 5 cifras</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Banner Promo 6 + 1 GRATIS -->
+                <div class="max-w-xl mx-auto px-4 py-3 rounded-2xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200/80 dark:border-emerald-800/60 text-emerald-950 dark:text-emerald-200 text-xs sm:text-sm font-bold flex items-center justify-center gap-2">
+                    <i class="ph-fill ph-gift text-lg text-emerald-600 dark:text-emerald-400 shrink-0"></i>
+                    <span data-i18n-html="promoBanner">PROMO ESPECIAL: <span class="font-normal">Por cada 6 tickets que compres, te regalamos</span> 1 TICKET GRATIS (7 por 18 €).</span>
+                </div>
+
+                <!-- Cuenta atrás compacta -->
+                <div class="max-w-md mx-auto bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/90 dark:border-slate-800 p-4 sm:p-5 shadow-sm">
+                    <div class="flex items-center justify-center gap-2 mb-3">
+                        <span class="px-2 py-0.5 rounded bg-[#008542] text-white font-display font-black text-[10px] tracking-wider">ONCE</span>
+                        <span data-i18n="countdownLabel" class="text-[11px] font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400">Cuenta atrás · Sorteo 24 de junio</span>
+                    </div>
+                    <div class="grid grid-cols-4 gap-2 text-center">
+                        <div class="bg-slate-50 dark:bg-slate-800/80 rounded-2xl py-2.5">
+                            <span id="cd-days" class="font-display font-black text-xl sm:text-2xl text-slate-900 dark:text-white block">--</span>
+                            <span data-i18n="cdDays" class="text-[10px] font-bold uppercase text-slate-400">Días</span>
+                        </div>
+                        <div class="bg-slate-50 dark:bg-slate-800/80 rounded-2xl py-2.5">
+                            <span id="cd-hours" class="font-display font-black text-xl sm:text-2xl text-slate-900 dark:text-white block">--</span>
+                            <span data-i18n="cdHours" class="text-[10px] font-bold uppercase text-slate-400">Horas</span>
+                        </div>
+                        <div class="bg-slate-50 dark:bg-slate-800/80 rounded-2xl py-2.5">
+                            <span id="cd-minutes" class="font-display font-black text-xl sm:text-2xl text-slate-900 dark:text-white block">--</span>
+                            <span data-i18n="cdMin" class="text-[10px] font-bold uppercase text-slate-400">Min</span>
+                        </div>
+                        <div class="bg-slate-50 dark:bg-slate-800/80 rounded-2xl py-2.5">
+                            <span id="cd-seconds" class="font-display font-black text-xl sm:text-2xl text-amber-600 dark:text-amber-400 block">--</span>
+                            <span data-i18n="cdSec" class="text-[10px] font-bold uppercase text-slate-400">Seg</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botones principales -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-1">
+                    <a href="#pedir" class="w-full sm:w-auto px-7 py-4 rounded-2xl bg-slate-900 dark:bg-amber-400 hover:bg-slate-800 dark:hover:bg-amber-300 text-white dark:text-slate-950 font-extrabold text-sm sm:text-base shadow-sm transition-all flex items-center justify-center gap-2">
+                        <i class="ph-bold ph-ticket text-lg text-amber-300 dark:text-slate-950"></i>
+                        <span data-i18n="heroBtnOrder">Pedir mis tickets</span>
+                    </a>
+                    <a id="hero-wa-link" href="https://wa.me/34672890854?text=Hola%20Carlos%2C%20tengo%20una%20consulta%20sobre%20los%20tickets%20del%20sorteo%20de%204%C2%BA%20ESO%20de%20la%20Escola%20IPSE." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-7 py-4 rounded-2xl bg-[#25D366] hover:bg-[#20bd5a] text-slate-950 font-extrabold text-sm sm:text-base shadow-sm transition-all flex items-center justify-center gap-2">
+                        <i class="ph-fill ph-whatsapp-logo text-xl"></i>
+                        <span data-i18n="heroBtnWa">Mensaje WhatsApp: 672 89 08 54</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- 1.5 HUCHA DEL VIAJE (BASTANTE VACÍA CON MONEDAS Y BILLETES)-->
+        <!-- ========================================================= -->
+        <section id="hucha" class="scroll-mt-28 py-12 sm:py-16 px-4 sm:px-6 bg-amber-50/60 dark:bg-slate-900/60 border-t border-slate-200/70 dark:border-slate-800 transition-colors">
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white dark:bg-slate-900 rounded-3xl border border-amber-200/90 dark:border-slate-800 p-6 sm:p-10 shadow-sm flex flex-col md:flex-row items-center gap-8">
+                    
+                    <!-- Ilustración SVG de hucha de cristal transparente bastante vacía con algunas monedas y billetes en el fondo -->
+                    <div class="w-56 sm:w-64 shrink-0 flex flex-col items-center">
+                        <svg viewBox="0 0 240 240" class="w-full h-auto drop-shadow-sm" role="img" aria-label="Hucha transparente bastante vacía con algunas monedas y billetes en el fondo">
+                            <defs>
+                                <linearGradient id="jarGlass" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" stop-color="#e0f2fe" stop-opacity="0.55"/>
+                                    <stop offset="25%" stop-color="#ffffff" stop-opacity="0.75"/>
+                                    <stop offset="80%" stop-color="#bae6fd" stop-opacity="0.35"/>
+                                    <stop offset="100%" stop-color="#7dd3fc" stop-opacity="0.55"/>
+                                </linearGradient>
+                                <linearGradient id="lidMetal" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" stop-color="#64748b"/>
+                                    <stop offset="50%" stop-color="#cbd5e1"/>
+                                    <stop offset="100%" stop-color="#475569"/>
+                                </linearGradient>
+                                <linearGradient id="goldCoin" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#fde047"/>
+                                    <stop offset="100%" stop-color="#d97706"/>
+                                </linearGradient>
+                            </defs>
+
+                            <!-- Sombra base -->
+                            <ellipse cx="120" cy="222" rx="72" ry="8" fill="#0f172a" opacity="0.12"/>
+
+                            <!-- Cuerpo de la hucha de cristal (mayormente vacío arriba) -->
+                            <rect x="52" y="54" width="136" height="164" rx="34" fill="url(#jarGlass)" stroke="#38bdf8" stroke-width="3"/>
+
+                            <!-- Espacio vacío interior sutil -->
+                            <text x="120" y="112" text-anchor="middle" fill="#64748b" font-size="11" font-weight="700" opacity="0.55">¡Aún queda mucho</text>
+                            <text x="120" y="127" text-anchor="middle" fill="#64748b" font-size="11" font-weight="700" opacity="0.55">espacio por llenar!</text>
+
+                            <!-- Pocos billetes doblados en el fondo de la hucha -->
+                            <!-- Billete de 20€ azul doblado -->
+                            <g transform="translate(66, 178) rotate(-8)">
+                                <rect x="0" y="0" width="54" height="26" rx="4" fill="#38bdf8" stroke="#0284c7" stroke-width="1.5"/>
+                                <rect x="5" y="4" width="44" height="18" rx="2" fill="none" stroke="#e0f2fe" stroke-width="1" stroke-dasharray="3 2"/>
+                                <text x="27" y="17" text-anchor="middle" fill="#0c4a6e" font-size="10" font-weight="900">20 €</text>
+                            </g>
+
+                            <!-- Billete de 50€ naranja doblado -->
+                            <g transform="translate(115, 182) rotate(7)">
+                                <rect x="0" y="0" width="56" height="26" rx="4" fill="#fb923c" stroke="#c2410c" stroke-width="1.5"/>
+                                <rect x="5" y="4" width="46" height="18" rx="2" fill="none" stroke="#ffedd5" stroke-width="1" stroke-dasharray="3 2"/>
+                                <text x="28" y="17" text-anchor="middle" fill="#7c2d12" font-size="10" font-weight="900">50 €</text>
+                            </g>
+
+                            <!-- Billete de 10€ rojizo asomando detrás -->
+                            <g transform="translate(92, 170) rotate(-2)">
+                                <rect x="0" y="0" width="50" height="22" rx="4" fill="#f87171" stroke="#b91c1c" stroke-width="1.5"/>
+                                <text x="25" y="15" text-anchor="middle" fill="#7f1d1d" font-size="9.5" font-weight="900">10 €</text>
+                            </g>
+
+                            <!-- Algunas monedas sueltas en la base -->
+                            <circle cx="72" cy="204" r="10" fill="url(#goldCoin)" stroke="#b45309" stroke-width="1.5"/>
+                            <text x="72" y="207.5" text-anchor="middle" fill="#78350f" font-size="9" font-weight="900">2€</text>
+
+                            <circle cx="94" cy="206" r="9" fill="url(#goldCoin)" stroke="#b45309" stroke-width="1.5"/>
+                            <text x="94" y="209" text-anchor="middle" fill="#78350f" font-size="8.5" font-weight="900">1€</text>
+
+                            <circle cx="116" cy="205" r="10" fill="url(#goldCoin)" stroke="#b45309" stroke-width="1.5"/>
+                            <text x="116" y="208.5" text-anchor="middle" fill="#78350f" font-size="9" font-weight="900">2€</text>
+
+                            <circle cx="139" cy="207" r="8.5" fill="#f59e0b" stroke="#92400e" stroke-width="1.5"/>
+                            <text x="139" y="210" text-anchor="middle" fill="#451a03" font-size="7.5" font-weight="900">50c</text>
+
+                            <circle cx="161" cy="204" r="10" fill="url(#goldCoin)" stroke="#b45309" stroke-width="1.5"/>
+                            <text x="161" y="207.5" text-anchor="middle" fill="#78350f" font-size="9" font-weight="900">2€</text>
+
+                            <!-- Reflejo de cristal -->
+                            <path d="M68 72 L68 162" stroke="#ffffff" stroke-width="5" stroke-linecap="round" opacity="0.7"/>
+                            <path d="M68 172 L68 180" stroke="#ffffff" stroke-width="5" stroke-linecap="round" opacity="0.7"/>
+
+                            <!-- Tapa metálica con ranura -->
+                            <rect x="64" y="34" width="112" height="22" rx="8" fill="url(#lidMetal)" stroke="#475569" stroke-width="2"/>
+                            <rect x="92" y="42" width="56" height="6" rx="3" fill="#0f172a"/>
+
+                            <!-- Moneda entrando por la ranura -->
+                            <circle cx="120" cy="22" r="12" fill="url(#goldCoin)" stroke="#b45309" stroke-width="2"/>
+                            <text x="120" y="26" text-anchor="middle" fill="#78350f" font-size="10" font-weight="900">3€</text>
+                        </svg>
+                    </div>
+
+                    <!-- Texto y contador de dinero recaudado -->
+                    <div class="flex-1 text-center md:text-left space-y-4">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 dark:bg-amber-950/60 text-amber-900 dark:text-amber-300 text-xs font-extrabold">
+                            <i class="ph-fill ph-piggy-bank text-base text-amber-600 dark:text-amber-400"></i>
+                            <span data-i18n="piggyBadge">Hucha del Viaje · 4º ESO IPSE</span>
+                        </div>
+
+                        <div>
+                            <span data-i18n="piggyLabel" class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 block">Dinero recaudado hasta ahora</span>
+                            <div data-i18n="piggyAmount" class="font-display font-black text-3xl sm:text-5xl text-slate-900 dark:text-amber-400 mt-1">
+                                Dinero recaudado: 115 €
+                            </div>
+                        </div>
+
+                        <!-- Barra visual casi vacía -->
+                        <div class="space-y-1.5">
+                            <div class="w-full h-4 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 overflow-hidden p-0.5">
+                                <div class="h-full rounded-full bg-gradient-to-r from-amber-400 to-emerald-500 transition-all duration-700" style="width: 11.5%;"></div>
+                            </div>
+                            <p data-i18n="piggySub" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                ¡Acabamos de empezar y nuestra hucha todavía tiene muchísimo sitio! Con cada papeleta de <strong>3 €</strong> nos ayudas a llenarla para hacer realidad el viaje de fin de curso de <strong>Carlos, Ángel, Albert, Walter y Claudio</strong>.
+                            </p>
+                        </div>
+
+                        <div class="pt-1">
+                            <a href="#pedir" class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-slate-900 dark:bg-amber-400 hover:bg-slate-800 dark:hover:bg-amber-300 text-white dark:text-slate-950 font-extrabold text-xs sm:text-sm shadow-sm transition-all">
+                                <i class="ph-fill ph-coins text-base text-amber-300 dark:text-slate-950"></i>
+                                <span data-i18n="piggyCta">Ayudarnos a llenar la hucha</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- 2. LOS 8 PREMIOS A ELEGIR                                 -->
+        <!-- ========================================================= -->
+        <section id="premios" class="scroll-mt-28 py-16 sm:py-24 px-4 sm:px-6 bg-white dark:bg-slate-900 border-y border-slate-200/70 dark:border-slate-800 transition-colors">
+            <div class="max-w-6xl mx-auto">
+                <div class="max-w-2xl mx-auto text-center mb-12 space-y-3">
+                    <span data-i18n="prizesKicker" class="text-xs font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">Si te toca, tú eliges</span>
+                    <h2 data-i18n="prizesTitle" class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Los 8 Premios Disponibles</h2>
+                    <p data-i18n-html="prizesDesc" class="text-sm sm:text-base text-slate-600 dark:text-slate-300">
+                        Si las 5 cifras de tu papeleta coinciden con el sorteo de la <strong>ONCE del 24 de junio</strong>, escoges uno de estos 8 premios:
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
+                    <!-- 1. Crucero para 2 personas -->
+                    <article class="group bg-slate-50 dark:bg-slate-800/70 rounded-3xl border border-slate-200/80 dark:border-slate-700/80 overflow-hidden shadow-sm hover:border-sky-400 dark:hover:border-sky-500 transition-all flex flex-col">
+                        <div class="h-36 sm:h-44 overflow-hidden bg-slate-200 dark:bg-slate-800">
+                            <img src="https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=800&q=80" alt="Crucero para 2 personas" loading="lazy" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0284c7/ffffff?text=Crucero';" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-4 text-center flex-1 flex items-center justify-center">
+                            <h3 data-i18n="prize1" class="font-bold text-sm sm:text-base text-slate-900 dark:text-white leading-snug">Crucero para 2 personas</h3>
+                        </div>
+                    </article>
+
+                    <!-- 2. PC Mac -->
+                    <article class="group bg-slate-50 dark:bg-slate-800/70 rounded-3xl border border-slate-200/80 dark:border-slate-700/80 overflow-hidden shadow-sm hover:border-slate-400 dark:hover:border-slate-500 transition-all flex flex-col">
+                        <div class="h-36 sm:h-44 overflow-hidden bg-slate-200 dark:bg-slate-800">
+                            <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=700&q=80" alt="PC Mac" loading="lazy" onerror="this.src='https://placehold.co/600x400/334155/ffffff?text=PC+Mac'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-4 text-center flex-1 flex items-center justify-center">
+                            <h3 class="font-bold text-sm sm:text-base text-slate-900 dark:text-white leading-snug">PC Mac</h3>
+                        </div>
+                    </article>
+
+                    <!-- 3. Smart TV -->
+                    <article class="group bg-slate-50 dark:bg-slate-800/70 rounded-3xl border border-slate-200/80 dark:border-slate-700/80 overflow-hidden shadow-sm hover:border-pink-400 dark:hover:border-pink-500 transition-all flex flex-col">
+                        <div class="h-36 sm:h-44 overflow-hidden bg-slate-200 dark:bg-slate-800">
+                            <img src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=700&q=80" alt="Smart TV" loading="lazy" onerror="this.src='https://placehold.co/600x400/db2777/ffffff?text=Smart+TV'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-4 text-center flex-1 flex items-center justify-center">
+                            <h3 class="font-bold text-sm sm:text-base text-slate-900 dark:text-white leading-snug">Smart TV</h3>
+                        </div>
+                    </article>
+
+                    <!-- 4. iPad -->
+                    <article class="group bg-slate-50 dark:bg-slate-800/70 rounded-3xl border border-slate-200/80 dark:border-slate-700/80 overflow-hidden shadow-sm hover:border-amber-400 dark:hover:border-amber-500 transition-all flex flex-col">
+                        <div class="h-36 sm:h-44 overflow-hidden bg-slate-200 dark:bg-slate-800">
+                            <img src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?auto=format&fit=crop&w=700&q=80" alt="iPad" loading="lazy" onerror="this.src='https://placehold.co/600x400/d97706/ffffff?text=iPad'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-4 text-center flex-1 flex items-center justify-center">
+                            <h3 class="font-bold text-sm sm:text-base text-slate-900 dark:text-white leading-snug">iPad</h3>
+                        </div>
+                    </article>
+
+                    <!-- 5. iPhone -->
+                    <article class="group bg-slate-50 dark:bg-slate-800/70 rounded-3xl border border-slate-200/80 dark:border-slate-700/80 overflow-hidden shadow-sm hover:border-indigo-400 dark:hover:border-indigo-500 transition-all flex flex-col">
+                        <div class="h-36 sm:h-44 overflow-hidden bg-slate-200 dark:bg-slate-800">
+                            <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=700&q=80" alt="iPhone" loading="lazy" onerror="this.src='https://placehold.co/600x400/4f46e5/ffffff?text=iPhone'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-4 text-center flex-1 flex items-center justify-center">
+                            <h3 class="font-bold text-sm sm:text-base text-slate-900 dark:text-white leading-snug">iPhone</h3>
+                        </div>
+                    </article>
+
+                    <!-- 6. Samsung -->
+                    <article class="group bg-slate-50 dark:bg-slate-800/70 rounded-3xl border border-slate-200/80 dark:border-slate-700/80 overflow-hidden shadow-sm hover:border-blue-400 dark:hover:border-blue-500 transition-all flex flex-col">
+                        <div class="h-36 sm:h-44 overflow-hidden bg-slate-200 dark:bg-slate-800">
+                            <img src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=700&q=80" alt="Samsung" loading="lazy" onerror="this.src='https://placehold.co/600x400/2563eb/ffffff?text=Samsung'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-4 text-center flex-1 flex items-center justify-center">
+                            <h3 class="font-bold text-sm sm:text-base text-slate-900 dark:text-white leading-snug">Samsung</h3>
+                        </div>
+                    </article>
+
+                    <!-- 7. PlayStation -->
+                    <article class="group bg-slate-50 dark:bg-slate-800/70 rounded-3xl border border-slate-200/80 dark:border-slate-700/80 overflow-hidden shadow-sm hover:border-cyan-400 dark:hover:border-cyan-500 transition-all flex flex-col">
+                        <div class="h-36 sm:h-44 overflow-hidden bg-slate-200 dark:bg-slate-800">
+                            <img src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db?auto=format&fit=crop&w=700&q=80" alt="PlayStation" loading="lazy" onerror="this.src='https://placehold.co/600x400/0891b2/ffffff?text=PlayStation'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-4 text-center flex-1 flex items-center justify-center">
+                            <h3 class="font-bold text-sm sm:text-base text-slate-900 dark:text-white leading-snug">PlayStation</h3>
+                        </div>
+                    </article>
+
+                    <!-- 8. Xbox -->
+                    <article class="group bg-slate-50 dark:bg-slate-800/70 rounded-3xl border border-slate-200/80 dark:border-slate-700/80 overflow-hidden shadow-sm hover:border-emerald-400 dark:hover:border-emerald-500 transition-all flex flex-col">
+                        <div class="h-36 sm:h-44 overflow-hidden bg-slate-200 dark:bg-slate-800">
+                            <img src="https://images.unsplash.com/photo-1621259182978-fbf93132d53d?auto=format&fit=crop&w=700&q=80" alt="Xbox" loading="lazy" onerror="this.src='https://placehold.co/600x400/059669/ffffff?text=Xbox'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-4 text-center flex-1 flex items-center justify-center">
+                            <h3 class="font-bold text-sm sm:text-base text-slate-900 dark:text-white leading-snug">Xbox</h3>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- 3. MUESTRA DE TICKETS Y BASES LEGALES                     -->
+        <!-- ========================================================= -->
+        <section id="tickets" class="scroll-mt-28 py-16 sm:py-24 px-4 sm:px-6 transition-colors">
+            <div class="max-w-6xl mx-auto space-y-14">
+                <div class="max-w-2xl mx-auto text-center space-y-3">
+                    <div class="inline-flex items-center justify-center gap-2.5">
+                        <span class="px-2.5 py-1 rounded-lg bg-slate-200/80 dark:bg-slate-800 text-slate-900 dark:text-white font-display font-black text-xs">🍍 Bye Bye Group</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-[#008542] border border-[#FFD100] text-white font-display font-black text-xs tracking-wider">ONCE · 24 JUNIO</span>
+                    </div>
+                    <h2 data-i18n="ticketsTitle" class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Así son nuestros Tickets Oficiales</h2>
+                    <p data-i18n-html="ticketsDesc" class="text-sm sm:text-base text-slate-600 dark:text-slate-300">
+                        Cada ticket vale <strong>3 €</strong>. La tira oficial viene en <strong>4 colores</strong> con números en saltos de 25.000.
+                    </p>
+                </div>
+
+                <!-- TIRA DE 4 COLORES REALES -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="rounded-3xl p-5 bg-[#FBBF24] text-slate-950 shadow-sm border border-amber-300 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between text-xs font-extrabold pb-3 mb-3 border-b border-slate-950/15">
+                                <span data-i18n="ticketDonation">Donativo 3 €</span>
+                                <span class="flex items-center gap-1">🍍 Bye Bye Group</span>
+                            </div>
+                            <div class="text-center mb-4">
+                                <span data-i18n="ticketDrawWord" class="font-display font-black text-2xl tracking-tight block">SORTEO</span>
+                                <span data-i18n="ticketDateWord" class="text-xs font-bold text-slate-900/80">ONCE · 24 de junio</span>
+                            </div>
+                            <ul class="text-xs font-semibold space-y-1.5 bg-white/50 rounded-2xl p-3.5 mb-4">
+                                <li data-i18n="ticketList1">• Crucero para 2 personas</li>
+                                <li data-i18n="ticketList2">• PC Mac o Smart TV</li>
+                                <li data-i18n="ticketList3">• iPad, iPhone o Samsung</li>
+                                <li data-i18n="ticketList4">• PlayStation o Xbox</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white/95 rounded-2xl py-2.5 px-3 text-center shadow-inner">
+                            <span data-i18n="ticketSampleNum" class="block text-[10px] font-bold uppercase tracking-wider text-slate-400">Ejemplo de número</span>
+                            <span class="font-mono font-black text-2xl tracking-widest text-slate-900">12780</span>
+                        </div>
+                    </div>
+
+                    <div class="rounded-3xl p-5 bg-[#EC4899] text-white shadow-sm border border-pink-400 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between text-xs font-extrabold pb-3 mb-3 border-b border-white/20">
+                                <span data-i18n="ticketDonation">Donativo 3 €</span>
+                                <span class="flex items-center gap-1">🍍 Bye Bye Group</span>
+                            </div>
+                            <div class="text-center mb-4">
+                                <span data-i18n="ticketDrawWord" class="font-display font-black text-2xl tracking-tight block">SORTEO</span>
+                                <span data-i18n="ticketDateWord" class="text-xs font-bold text-pink-100">ONCE · 24 de junio</span>
+                            </div>
+                            <ul class="text-xs font-semibold space-y-1.5 bg-black/15 rounded-2xl p-3.5 mb-4">
+                                <li data-i18n="ticketList1">• Crucero para 2 personas</li>
+                                <li data-i18n="ticketList2">• PC Mac o Smart TV</li>
+                                <li data-i18n="ticketList3">• iPad, iPhone o Samsung</li>
+                                <li data-i18n="ticketList4">• PlayStation o Xbox</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white/95 rounded-2xl py-2.5 px-3 text-center shadow-inner">
+                            <span data-i18n="ticketSampleNum" class="block text-[10px] font-bold uppercase tracking-wider text-slate-400">Ejemplo de número</span>
+                            <span class="font-mono font-black text-2xl tracking-widest text-slate-900">37780</span>
+                        </div>
+                    </div>
+
+                    <div class="rounded-3xl p-5 bg-[#38BDF8] text-slate-950 shadow-sm border border-sky-300 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between text-xs font-extrabold pb-3 mb-3 border-b border-slate-950/15">
+                                <span data-i18n="ticketDonation">Donativo 3 €</span>
+                                <span class="flex items-center gap-1">🍍 Bye Bye Group</span>
+                            </div>
+                            <div class="text-center mb-4">
+                                <span data-i18n="ticketDrawWord" class="font-display font-black text-2xl tracking-tight block">SORTEO</span>
+                                <span data-i18n="ticketDateWord" class="text-xs font-bold text-slate-900/80">ONCE · 24 de junio</span>
+                            </div>
+                            <ul class="text-xs font-semibold space-y-1.5 bg-white/50 rounded-2xl p-3.5 mb-4">
+                                <li data-i18n="ticketList1">• Crucero para 2 personas</li>
+                                <li data-i18n="ticketList2">• PC Mac o Smart TV</li>
+                                <li data-i18n="ticketList3">• iPad, iPhone o Samsung</li>
+                                <li data-i18n="ticketList4">• PlayStation o Xbox</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white/95 rounded-2xl py-2.5 px-3 text-center shadow-inner">
+                            <span data-i18n="ticketSampleNum" class="block text-[10px] font-bold uppercase tracking-wider text-slate-400">Ejemplo de número</span>
+                            <span class="font-mono font-black text-2xl tracking-widest text-slate-900">62780</span>
+                        </div>
+                    </div>
+
+                    <div class="rounded-3xl p-5 bg-[#22C55E] text-slate-950 shadow-sm border border-emerald-300 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between text-xs font-extrabold pb-3 mb-3 border-b border-slate-950/15">
+                                <span data-i18n="ticketDonation">Donativo 3 €</span>
+                                <span class="flex items-center gap-1">🍍 Bye Bye Group</span>
+                            </div>
+                            <div class="text-center mb-4">
+                                <span data-i18n="ticketDrawWord" class="font-display font-black text-2xl tracking-tight block">SORTEO</span>
+                                <span data-i18n="ticketDateWord" class="text-xs font-bold text-slate-900/80">ONCE · 24 de junio</span>
+                            </div>
+                            <ul class="text-xs font-semibold space-y-1.5 bg-white/50 rounded-2xl p-3.5 mb-4">
+                                <li data-i18n="ticketList1">• Crucero para 2 personas</li>
+                                <li data-i18n="ticketList2">• PC Mac o Smart TV</li>
+                                <li data-i18n="ticketList3">• iPad, iPhone o Samsung</li>
+                                <li data-i18n="ticketList4">• PlayStation o Xbox</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white/95 rounded-2xl py-2.5 px-3 text-center shadow-inner">
+                            <span data-i18n="ticketSampleNum" class="block text-[10px] font-bold uppercase tracking-wider text-slate-400">Ejemplo de número</span>
+                            <span class="font-mono font-black text-2xl tracking-widest text-slate-900">87780</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BASES LEGALES -->
+                <div id="bases" class="scroll-mt-28 max-w-4xl mx-auto bg-slate-50 dark:bg-slate-800/50 rounded-3xl border border-slate-200 dark:border-slate-800 p-6 sm:p-8 shadow-sm space-y-6">
+                    <div class="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-200/80 dark:border-slate-700/80">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-amber-300 flex items-center justify-center shrink-0">
+                                <i class="ph-bold ph-file-text text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 data-i18n="legalTitle" class="font-bold text-lg sm:text-xl text-slate-900 dark:text-white">Condiciones Generales del Sorteo (Reverso Oficial)</h3>
+                                <p data-i18n="legalSub" class="text-xs text-slate-500 dark:text-slate-400">Bases impresas en cada papeleta oficial de Bye Bye Group</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white font-display font-black text-xs">bye bye group</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-[#008542] text-white font-display font-black text-xs tracking-wider">ONCE</span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                        <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/70 dark:border-slate-800">
+                            <span data-i18n="legal1Title" class="font-bold text-slate-900 dark:text-white block mb-1">1. Objeto</span>
+                            <span data-i18n="legal1Body">El presente sorteo tiene por finalidad promover la fidelización con nuestros clientes. Tiene carácter no lucrativo.</span>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/70 dark:border-slate-800">
+                            <span data-i18n="legal2Title" class="font-bold text-slate-900 dark:text-white block mb-1">2. Sorteo (24 de junio · ONCE)</span>
+                            <span data-i18n-html="legal2Body">La participación premiada será aquella que coincida con sus <strong>cinco dígitos</strong> con el sorteo del <strong>24 de junio de la ONCE</strong>.</span>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/70 dark:border-slate-800">
+                            <span data-i18n="legal3Title" class="font-bold text-slate-900 dark:text-white block mb-1">3. Premios a elegir</span>
+                            <span data-i18n="legal3Body">A seleccionar uno entre: Crucero para dos personas, PC Mac, Smart TV, iPad, iPhone, Samsung, PlayStation o Xbox según disponibilidad.</span>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-amber-50 dark:bg-amber-950/35 border border-amber-200/80 dark:border-amber-800/60 text-amber-950 dark:text-amber-200">
+                            <span data-i18n="legal4Title" class="font-bold block mb-1">4. Entrega y reclamación (Plazo: 7 días)</span>
+                            <span data-i18n-html="legal4Body">El/la ganador/a deberá enviar un correo a <a href="mailto:info@byebyegroup.com" class="font-bold underline">info@byebyegroup.com</a> dentro de los <strong>7 días posteriores</strong> al sorteo del 24 de junio. De no ser así, se entenderá desierta.</span>
+                        </div>
+
+                        <div class="md:col-span-2 p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/70 dark:border-slate-800">
+                            <span data-i18n="legal5Title" class="font-bold text-slate-900 dark:text-white block mb-1">5. Cancelación o ampliación de los sorteos</span>
+                            <span data-i18n="legal5Body">Los premios no son transferibles ni canjeables por dinero en efectivo. El organizador solo es responsable de poner a disposición de cada ganador el premio del cual resultó ganador.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- 4. ENTREGA EN MANO Y MÉTODOS DE PAGO                      -->
+        <!-- ========================================================= -->
+        <section id="como-funciona" class="scroll-mt-28 py-16 sm:py-24 px-4 sm:px-6 border-y border-slate-200/70 dark:border-slate-800 transition-colors">
+            <div class="max-w-5xl mx-auto">
+                <div class="max-w-2xl mx-auto text-center mb-12 space-y-3">
+                    <span data-i18n="delKicker" class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Fácil, directo y de confianza</span>
+                    <h2 data-i18n="delTitle" class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Entrega en Mano y Formas de Pago</h2>
+                    <p data-i18n="delDesc" class="text-sm sm:text-base text-slate-600 dark:text-slate-300">
+                        Quedamos contigo por mensaje de WhatsApp y te entregamos tus papeletas físicas originales.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-slate-50 dark:bg-slate-800/70 rounded-3xl border border-slate-200/80 dark:border-slate-700/80 p-6 sm:p-7 space-y-4">
+                        <div class="w-12 h-12 rounded-2xl bg-sky-100 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400 flex items-center justify-center">
+                            <i class="ph-fill ph-map-pin text-2xl"></i>
+                        </div>
+                        <h3 data-i18n="delCard1Title" class="font-bold text-lg text-slate-900 dark:text-white">Solo Provincia de Barcelona</h3>
+                        <p data-i18n-html="delCard1Body" class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                            Entrega en mano exclusiva en la <strong>provincia de Barcelona</strong>. Concretamos la <strong>hora y el lugar por mensaje de WhatsApp</strong>, y un miembro del grupo (<strong>Carlos, Ángel, Albert, Walter o Claudio</strong>) va personalmente a llevarte tu ticket dando las <strong>máximas comodidades</strong>.
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-50 dark:bg-slate-800/70 rounded-3xl border border-slate-200/80 dark:border-slate-700/80 p-6 sm:p-7 space-y-4">
+                        <div class="flex flex-wrap items-center gap-2">
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#05C3DD]/15 border border-[#05C3DD]/40 text-[#028499] dark:text-[#38E2F8] font-display font-black text-xs">
+                                <i class="ph-fill ph-lightning text-sm"></i>
+                                <span>bizum</span>
+                            </span>
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-indigo-100/80 dark:bg-indigo-950/60 border border-indigo-200 dark:border-indigo-800 text-indigo-700 dark:text-indigo-300 font-bold text-xs">
+                                <i class="ph-fill ph-bank text-sm"></i>
+                                <span data-i18n="badgeTransfer">Transferencia</span>
+                            </span>
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-100/80 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800 text-emerald-700 dark:text-emerald-300 font-bold text-xs">
+                                <i class="ph-fill ph-money text-sm"></i>
+                                <span data-i18n="badgeCash">Efectivo</span>
+                            </span>
+                        </div>
+                        <h3 data-i18n="delCard2Title" class="font-bold text-lg text-slate-900 dark:text-white">Bizum, Transferencia o Efectivo</h3>
+                        <p data-i18n-html="delCard2Body" class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                            Puedes pagar por <strong>Bizum</strong>, <strong>Transferencia Bancaria</strong> o <strong>efectivo</strong> al entregar. Si cambias de opinión, puedes <strong>cambiar el método de pago por WhatsApp</strong> en cualquier momento antes de la entrega.
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-50 dark:bg-slate-800/70 rounded-3xl border border-slate-200/80 dark:border-slate-700/80 p-6 sm:p-7 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-12 h-12 rounded-2xl bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">
+                                <i class="ph-fill ph-whatsapp-logo text-2xl"></i>
+                            </div>
+                            <h3 data-i18n="delCard3Title" class="font-bold text-lg text-slate-900 dark:text-white">¿Dudas? Escríbenos por WhatsApp</h3>
+                            <p data-i18n-html="delCard3Body" class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                Para más información, <strong>envía un mensaje escrito por WhatsApp</strong> a <strong>Carlos</strong> (solo mensajes, no llamadas):
+                            </p>
+                        </div>
+                        <a id="card-wa-link" href="https://wa.me/34672890854?text=Hola%20Carlos%2C%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20tickets%20del%20sorteo%20de%204%C2%BA%20ESO%20de%20la%20Escola%20IPSE." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 w-full py-3 px-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 hover:border-emerald-500 text-slate-900 dark:text-white font-extrabold text-base shadow-sm transition-colors">
+                            <i class="ph-fill ph-chat-text text-emerald-600"></i>
+                            <span>WhatsApp: 672 89 08 54</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- 5. CALCULADORA Y PEDIDO RÁPIDO                            -->
+        <!-- ========================================================= -->
+        <section id="pedir" class="scroll-mt-28 py-16 sm:py-24 px-4 sm:px-6 bg-white dark:bg-slate-900 border-b border-slate-200/70 dark:border-slate-800 transition-colors">
+            <div class="max-w-xl mx-auto">
+                <div class="text-center mb-10 space-y-3">
+                    <span data-i18n="orderKicker" class="text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">Reserva en 10 segundos</span>
+                    <h2 data-i18n="orderTitle" class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Pide tus Tickets</h2>
+                    <p data-i18n-html="orderDesc" class="text-sm sm:text-base text-slate-600 dark:text-slate-300">
+                        Elige cuántos quieres (recuerda: <strong>cada 6 tickets, 1 GRATIS</strong>) y envía un mensaje a <strong>Carlos (672 89 08 54)</strong> para concretar la entrega.
+                    </p>
+                </div>
+
+                <div class="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/90 dark:border-slate-800 p-6 sm:p-8 shadow-sm space-y-7">
+                    <!-- 1. Selección de pack / cantidad -->
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <label data-i18n="step1Label" class="text-xs font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400">1. Cantidad de tickets</label>
+                            <span data-i18n="step1Badge" class="text-xs font-bold text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950/60 px-2.5 py-0.5 rounded-full">Cada 6 → 1 GRATIS</span>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-3" id="pack-selector">
+                            <button type="button" data-paid="1" class="pack-option text-left p-3.5 rounded-2xl border-2 border-slate-200 dark:border-slate-700 hover:border-slate-900 dark:hover:border-amber-400 transition-all">
+                                <span data-i18n="pack1Name" class="block text-xs font-semibold text-slate-500 dark:text-slate-400">1 Ticket</span>
+                                <span class="font-display font-black text-lg text-slate-900 dark:text-white">3 €</span>
+                            </button>
+
+                            <button type="button" data-paid="4" class="pack-option text-left p-3.5 rounded-2xl border-2 border-slate-200 dark:border-slate-700 hover:border-slate-900 dark:hover:border-amber-400 transition-all">
+                                <span data-i18n="pack4Name" class="block text-xs font-semibold text-sky-600 dark:text-sky-400">Tira 4 Colores</span>
+                                <span class="font-display font-black text-lg text-slate-900 dark:text-white">12 €</span>
+                            </button>
+
+                            <button type="button" data-paid="6" class="pack-option relative text-left p-3.5 rounded-2xl border-2 border-slate-900 dark:border-amber-400 bg-slate-50 dark:bg-slate-800/80 transition-all">
+                                <span data-i18n="pack6Badge" class="absolute -top-2.5 right-2.5 bg-amber-400 text-slate-950 text-[10px] font-extrabold px-2 py-0.5 rounded-full">
+                                    +1 GRATIS
+                                </span>
+                                <span data-i18n="pack6Name" class="block text-xs font-bold text-slate-700 dark:text-slate-200">6 → 7 tickets</span>
+                                <span class="font-display font-black text-lg text-slate-900 dark:text-white">18 €</span>
+                            </button>
+
+                            <button type="button" data-paid="12" class="pack-option relative text-left p-3.5 rounded-2xl border-2 border-slate-200 dark:border-slate-700 hover:border-slate-900 dark:hover:border-amber-400 transition-all">
+                                <span data-i18n="pack12Badge" class="absolute -top-2.5 right-2.5 bg-emerald-500 text-white text-[10px] font-extrabold px-2 py-0.5 rounded-full">
+                                    +2 GRATIS
+                                </span>
+                                <span data-i18n="pack12Name" class="block text-xs font-bold text-slate-700 dark:text-slate-200">12 → 14 tickets</span>
+                                <span class="font-display font-black text-lg text-slate-900 dark:text-white">36 €</span>
+                            </button>
+                        </div>
+
+                        <!-- Selector manual -->
+                        <div class="flex items-center justify-between bg-slate-50 dark:bg-slate-800/70 rounded-2xl p-3.5 border border-slate-200/70 dark:border-slate-700/70">
+                            <div>
+                                <span data-i18n="paidTicketsLabel" class="text-xs font-bold text-slate-800 dark:text-slate-200 block">Tickets que pagas:</span>
+                                <span id="promo-status-text" class="text-xs font-semibold text-emerald-700 dark:text-emerald-400">+1 ticket gratis de regalo</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <button type="button" id="qty-minus" aria-label="Menos" class="w-9 h-9 rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-slate-800 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 font-bold flex items-center justify-center">
+                                    <i class="ph-bold ph-minus"></i>
+                                </button>
+                                <input type="number" id="qty-input" value="6" min="1" max="200" aria-label="Cantidad" class="w-14 text-center font-display font-extrabold text-base bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-xl py-1.5 text-slate-900 dark:text-white focus:outline-none focus:border-slate-900 dark:focus:border-amber-400">
+                                <button type="button" id="qty-plus" aria-label="Más" class="w-9 h-9 rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-slate-800 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 font-bold flex items-center justify-center">
+                                    <i class="ph-bold ph-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Nombre y forma de pago -->
+                    <div class="space-y-4">
+                        <label data-i18n="step2Label" class="block text-xs font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400">2. Tus datos básicos</label>
+
+                        <div>
+                            <label for="input-name" data-i18n="nameLabel" class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Tu nombre *</label>
+                            <input type="text" id="input-name" placeholder="Ej. Marc Soler" class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm font-medium text-slate-900 dark:text-white focus:outline-none focus:border-slate-900 dark:focus:border-amber-400">
+                            <p id="err-name" data-i18n="errName" class="hidden text-xs font-semibold text-red-600 dark:text-red-400 mt-1">Por favor, escribe tu nombre.</p>
+                        </div>
+
+                        <div>
+                            <label data-i18n="paymentLabel" class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-2">¿Cómo prefieres pagar?</label>
+                            <div class="grid grid-cols-3 gap-2.5" id="payment-selector" role="radiogroup" aria-label="Método de pago">
+                                <button type="button" data-pay-val="Bizum" class="pay-option flex flex-col items-center justify-center gap-1.5 p-3 rounded-2xl border-2 border-[#05C3DD] bg-[#05C3DD]/10 text-slate-900 dark:text-white transition-all">
+                                    <span class="px-2 py-0.5 rounded-lg bg-[#05C3DD] text-slate-950 font-display font-black text-xs tracking-tight flex items-center gap-1">
+                                        <i class="ph-fill ph-lightning text-xs"></i>bizum
+                                    </span>
+                                    <span class="text-[11px] font-bold text-slate-700 dark:text-slate-200">Bizum</span>
+                                </button>
+
+                                <button type="button" data-pay-val="Transferencia Bancaria" class="pay-option flex flex-col items-center justify-center gap-1.5 p-3 rounded-2xl border-2 border-slate-200 dark:border-slate-700 hover:border-indigo-400 text-slate-900 dark:text-white transition-all">
+                                    <span class="w-7 h-7 rounded-lg bg-indigo-100 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 flex items-center justify-center">
+                                        <i class="ph-fill ph-bank text-base"></i>
+                                    </span>
+                                    <span data-i18n="payTransferShort" class="text-[11px] font-bold text-slate-700 dark:text-slate-200">Transferencia</span>
+                                </button>
+
+                                <button type="button" data-pay-val="Efectivo al entregar" class="pay-option flex flex-col items-center justify-center gap-1.5 p-3 rounded-2xl border-2 border-slate-200 dark:border-slate-700 hover:border-emerald-400 text-slate-900 dark:text-white transition-all">
+                                    <span class="w-7 h-7 rounded-lg bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">
+                                        <i class="ph-fill ph-money text-base"></i>
+                                    </span>
+                                    <span data-i18n="payCashShort" class="text-[11px] font-bold text-slate-700 dark:text-slate-200">Efectivo</span>
+                                </button>
+                            </div>
+                            <p data-i18n="paymentChangeNote" class="text-xs font-medium text-emerald-700 dark:text-emerald-400 mt-2 flex items-start gap-1.5">
+                                <i class="ph-fill ph-arrows-left-right text-sm shrink-0 mt-0.5"></i>
+                                <span>Si cambias de opinión, puedes cambiar el método de pago escribiéndonos por WhatsApp antes de la entrega.</span>
+                            </p>
+                        </div>
+
+                        <p data-i18n="deliveryChatNote" class="text-xs text-slate-500 dark:text-slate-400 flex items-start gap-1.5">
+                            <i class="ph-fill ph-chat-circle-dots text-sky-600 dark:text-sky-400 text-base shrink-0"></i>
+                            <span>El lugar y hora de entrega en la provincia de Barcelona lo concretamos por mensaje de WhatsApp (no atendemos llamadas).</span>
+                        </p>
+                    </div>
+
+                    <!-- Resumen y botón WhatsApp -->
+                    <div class="pt-4 border-t border-slate-100 dark:border-slate-800 space-y-4">
+                        <div class="flex items-center justify-between bg-slate-50 dark:bg-slate-800/70 rounded-2xl p-4">
+                            <div>
+                                <span data-i18n="summaryReceiveLabel" class="text-[11px] font-bold uppercase text-slate-400 block">Recibes en mano</span>
+                                <span id="summary-tickets" class="font-display font-extrabold text-base text-slate-900 dark:text-white">7 tickets (6 + 1 gratis)</span>
+                            </div>
+                            <div class="text-right">
+                                <span data-i18n="summaryTotalLabel" class="text-[11px] font-bold uppercase text-slate-400 block">Total</span>
+                                <span id="summary-price" class="font-display font-black text-2xl sm:text-3xl text-slate-900 dark:text-amber-400">18 €</span>
+                            </div>
+                        </div>
+
+                        <button type="button" id="btn-send-whatsapp" class="w-full py-4 px-5 rounded-2xl bg-[#25D366] hover:bg-[#20bd5a] text-slate-950 font-extrabold text-sm sm:text-base shadow-sm transition-all flex items-center justify-center gap-2.5">
+                            <i class="ph-fill ph-whatsapp-logo text-2xl"></i>
+                            <span data-i18n="btnSendWa">Enviar mensaje a Carlos (672 89 08 54)</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- 6. AGRADECIMIENTO Y COMPARTIR CON AMIGOS Y FAMILIA        -->
+        <!-- ========================================================= -->
+        <section class="py-16 sm:py-20 px-4 sm:px-6 bg-slate-900 text-white">
+            <div class="max-w-3xl mx-auto text-center space-y-6">
+                <div class="w-12 h-12 rounded-2xl bg-amber-400 text-slate-950 flex items-center justify-center mx-auto shadow-md">
+                    <i class="ph-fill ph-heart text-2xl"></i>
+                </div>
+
+                <h2 data-i18n="thanksTitle" class="text-2xl sm:text-4xl font-extrabold tracking-tight">
+                    ¡Muchas gracias por ayudarnos con nuestro viaje de fin de curso!
+                </h2>
+
+                <p data-i18n-html="thanksBody" class="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
+                    De parte de <strong>Carlos, Ángel, Albert, Walter y Claudio</strong> y todos los compañeros de <strong>4º de ESO de l'Escola IPSE de Barcelona</strong>, agradecemos de corazón cada ticket y cada pequeño granito de arena. Si te ha gustado la iniciativa, <strong>compártela con tus amigos, familia y conocidos</strong> para que también puedan participar.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-2">
+                    <button type="button" data-open-share class="w-full sm:w-auto px-7 py-4 rounded-2xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-extrabold text-sm sm:text-base shadow-md transition-all flex items-center justify-center gap-2">
+                        <i class="ph-bold ph-share-network text-lg"></i>
+                        <span data-i18n="thanksShareBtn">Compartir con amigos y familia</span>
+                    </button>
+
+                    <a id="footer-wa-link" href="https://wa.me/34672890854?text=Hola%20Carlos%2C%20os%20escribo%20por%20el%20sorteo%20del%20viaje%20de%20fin%20de%20curso%20de%204%C2%BA%20ESO%20de%20la%20Escola%20IPSE." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-7 py-4 rounded-2xl bg-white/10 hover:bg-white/15 text-white border border-white/15 font-bold text-sm sm:text-base transition-all flex items-center justify-center gap-2">
+                        <i class="ph-fill ph-whatsapp-logo text-[#25D366] text-lg"></i>
+                        <span data-i18n="thanksWaBtn">Mensaje WhatsApp: 672 89 08 54</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- PIE DE PÁGINA DISCRETO -->
+    <footer class="bg-slate-950 text-slate-400 py-8 px-4 sm:px-6 text-xs">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+            <div>
+                <p data-i18n="footerLine1" class="font-bold text-slate-200">Viaje Fin de Curso · 4º ESO Escola IPSE Barcelona</p>
+                <p data-i18n="footerLine2" class="mt-0.5">Sorteo oficial Bye Bye Group · Combinación ganadora ONCE 24 de junio · Solo mensajes WhatsApp: 672 89 08 54</p>
+            </div>
+            <div class="flex items-center gap-3">
+                <span class="px-2.5 py-1 rounded bg-white/10 text-slate-200 font-bold">Bye Bye Group</span>
+                <span class="px-2.5 py-1 rounded bg-[#008542] text-white font-display font-black">ONCE</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================================= -->
+    <!-- MODAL PARA COMPARTIR                                      -->
+    <!-- ========================================================= -->
+    <div id="share-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/60 backdrop-blur-sm">
+        <div class="bg-white dark:bg-slate-900 rounded-3xl max-w-md w-full p-6 sm:p-7 shadow-2xl border border-slate-200 dark:border-slate-800 space-y-5 relative">
+            <div class="flex items-center justify-between">
+                <h3 data-i18n="shareModalTitle" class="font-display font-extrabold text-xl text-slate-900 dark:text-white">Compartir este sorteo</h3>
+                <button type="button" id="close-share-modal" aria-label="Cerrar" class="w-9 h-9 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 flex items-center justify-center">
+                    <i class="ph-bold ph-x text-lg"></i>
+                </button>
+            </div>
+
+            <p data-i18n-html="shareModalBody" class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                Envía esta web a tus <strong>amigos, familia o grupos de WhatsApp</strong> para ayudar al viaje de fin de curso de 4º de ESO de la Escola IPSE:
+            </p>
+
+            <!-- Caja visual con el enlace público que se va a compartir -->
+            <div class="p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 space-y-1.5">
+                <span data-i18n="shareUrlLabel" class="text-[11px] font-bold uppercase tracking-wider text-slate-400 block">Enlace público de la web</span>
+                <input type="url" id="share-url-input" placeholder="https://tu-web-sorteo.netlify.app" class="w-full px-3 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs font-mono text-slate-700 dark:text-slate-200 focus:outline-none focus:border-amber-400">
+                <p id="share-url-hint" data-i18n="shareUrlHint" class="text-[11px] text-amber-700 dark:text-amber-300 leading-snug">
+                    Cuando subas la web a Internet se rellenará solo, o puedes pegar aquí tu enlace público.
+                </p>
+            </div>
+
+            <div class="space-y-3">
+                <a id="share-whatsapp-direct" href="#" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 px-4 rounded-2xl bg-[#25D366] hover:bg-[#20bd5a] text-slate-950 font-extrabold text-sm flex items-center justify-center gap-2.5 shadow-sm transition-colors">
+                    <i class="ph-fill ph-whatsapp-logo text-xl"></i>
+                    <span data-i18n="shareModalWaBtn">Compartir por WhatsApp</span>
+                </a>
+
+                <button type="button" id="btn-copy-link" class="w-full py-3.5 px-4 rounded-2xl bg-slate-900 dark:bg-amber-400 hover:bg-slate-800 dark:hover:bg-amber-300 text-white dark:text-slate-950 font-bold text-sm flex items-center justify-center gap-2 transition-colors">
+                    <i class="ph-bold ph-copy text-lg text-amber-300 dark:text-slate-950"></i>
+                    <span data-i18n="shareModalCopyBtn" id="copy-link-label">Copiar enlace de la web</span>
+                </button>
+            </div>
+
+            <p id="copy-feedback" data-i18n="shareCopied" class="hidden text-center text-xs font-bold text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950/60 py-2 px-3 rounded-xl">
+                ¡Enlace copiado! Ya puedes pegarlo donde quieras.
+            </p>
+        </div>
+    </div>
+
+    <!-- SCRIPTS: IDIOMAS, MÚSICA, MODO CLARO/OSCURO, CALCULADORA Y MOTOR IA RAZONADOR -->
+    <script>
+        const TRANSLATIONS = {
+            es: {
+                headerTitle: "Viaje Fin de Curso · Escola IPSE",
+                headerSub: "4º ESO Barcelona · Carlos (672 89 08 54)",
+                navPiggy: "Hucha",
+                navPrizes: "Premios",
+                navTickets: "Tickets",
+                navRules: "Bases Legales",
+                navDelivery: "Cómo Funciona",
+                navOrder: "Pedir",
+                btnShare: "Compartir",
+                piggyBadge: "Hucha del Viaje · 4º ESO IPSE",
+                piggyLabel: "Estado actual de nuestra hucha",
+                piggyAmount: "Dinero recaudado: 115 €",
+                piggySub: "¡Acabamos de empezar y nuestra hucha todavía está bastante vacía! Con cada ticket de 3 € nos ayudas a llenarla para el viaje de fin de curso de Carlos, Ángel, Albert, Walter y Claudio.",
+                piggyCta: "Ayudarnos a llenar la hucha",
+                heroBadge: "Alumnos de 4º de ESO · Escola IPSE Barcelona",
+                heroTitle: 'Gana un <span class="underline decoration-amber-400 decoration-4 underline-offset-4">crucero</span> o elige el premio que prefieras, solo por 3 €',
+                heroSubtitle: "Mira con esperanza y deja que la suerte te sorprenda: este 24 de junio con la ONCE, el premio que prefieras puede ser tuyo mientras impulsas nuestro viaje de fin de curso.",
+                heroDesc: 'Somos <strong>Carlos, Ángel, Albert, Walter y Claudio</strong>, alumnos de <strong>4º de ESO de l\'Escola IPSE</strong> recaudando fondos para nuestro viaje de fin de curso. Participa por solo <strong>3 €</strong> en el sorteo oficial de la <strong>ONCE del 24 de junio</strong>.',
+                logoBBGSub: "Organizador oficial del sorteo",
+                logoONCETitle: "Cupón Diario · 24 Junio",
+                logoONCESub: "Coincidencia exacta de 5 cifras",
+                promoBanner: 'PROMO ESPECIAL: <span class="font-normal">Por cada 6 tickets que compres, te regalamos</span> 1 TICKET GRATIS (7 por 18 €).',
+                countdownLabel: "Cuenta atrás · Sorteo 24 de junio",
+                cdDays: "Días",
+                cdHours: "Horas",
+                cdMin: "Min",
+                cdSec: "Seg",
+                heroBtnOrder: "Pedir mis tickets",
+                heroBtnWa: "Mensaje WhatsApp: 672 89 08 54",
+                prizesKicker: "Si te toca, tú eliges",
+                prizesTitle: "Los 8 Premios Disponibles",
+                prizesDesc: 'Si las 5 cifras de tu papeleta coinciden con el sorteo de la <strong>ONCE del 24 de junio</strong>, escoges uno de estos 8 premios:',
+                prize1: "Crucero para 2 personas",
+                ticketsTitle: "Así son nuestros Tickets Oficiales",
+                ticketsDesc: 'Cada ticket vale <strong>3 €</strong>. La tira oficial viene en <strong>4 colores</strong> con números en saltos de 25.000.',
+                ticketDonation: "Donativo 3 €",
+                ticketDrawWord: "SORTEO",
+                ticketDateWord: "ONCE · 24 de junio",
+                ticketList1: "• Crucero para 2 personas",
+                ticketList2: "• PC Mac o Smart TV",
+                ticketList3: "• iPad, iPhone o Samsung",
+                ticketList4: "• PlayStation o Xbox",
+                ticketSampleNum: "Ejemplo de número",
+                legalTitle: "Condiciones Generales del Sorteo (Reverso Oficial)",
+                legalSub: "Bases impresas en cada papeleta oficial de Bye Bye Group",
+                legal1Title: "1. Objeto",
+                legal1Body: "El presente sorteo tiene por finalidad promover la fidelización con nuestros clientes. Tiene carácter no lucrativo.",
+                legal2Title: "2. Sorteo (24 de junio · ONCE)",
+                legal2Body: 'La participación premiada será aquella que coincida con sus <strong>cinco dígitos</strong> con el sorteo del <strong>24 de junio de la ONCE</strong>.',
+                legal3Title: "3. Premios a elegir",
+                legal3Body: "A seleccionar uno entre: Crucero para dos personas, PC Mac, Smart TV, iPad, iPhone, Samsung, PlayStation o Xbox según disponibilidad.",
+                legal4Title: "4. Entrega y reclamación (Plazo: 7 días)",
+                legal4Body: 'El/la ganador/a deberá enviar un correo a <a href="mailto:info@byebyegroup.com" class="font-bold underline">info@byebyegroup.com</a> dentro de los <strong>7 días posteriores</strong> al sorteo del 24 de junio. De no ser así, se entenderá desierta.',
+                legal5Title: "5. Cancelación o ampliación de los sorteos",
+                legal5Body: "Los premios no son transferibles ni canjeables por dinero en efectivo. El organizador solo es responsable de poner a disposición de cada ganador el premio del cual resultó ganador.",
+                delKicker: "Fácil, directo y de confianza",
+                delTitle: "Entrega en Mano y Formas de Pago",
+                delDesc: "Quedamos contigo por mensaje de WhatsApp y te entregamos tus papeletas físicas originales.",
+                delCard1Title: "Solo Provincia de Barcelona",
+                delCard1Body: 'Entrega en mano exclusiva en la <strong>provincia de Barcelona</strong>. Concretamos la <strong>hora y el lugar por mensaje de WhatsApp</strong>, y un miembro del grupo (<strong>Carlos, Ángel, Albert, Walter o Claudio</strong>) va personalmente a llevarte tu ticket dando las <strong>máximas comodidades</strong>.',
+                badgeTransfer: "Transferencia",
+                badgeCash: "Efectivo",
+                delCard2Title: "Bizum, Transferencia o Efectivo",
+                delCard2Body: 'Puedes pagar por <strong>Bizum</strong>, <strong>Transferencia Bancaria</strong> o <strong>efectivo</strong> al entregar. Si cambias de opinión, puedes <strong>cambiar el método de pago por WhatsApp</strong> en cualquier momento antes de la entrega.',
+                delCard3Title: "¿Dudas? Escríbenos por WhatsApp",
+                delCard3Body: 'Para más información, <strong>envía un mensaje escrito por WhatsApp</strong> a <strong>Carlos</strong> (solo mensajes, no llamadas):',
+                orderKicker: "Reserva en 10 segundos",
+                orderTitle: "Pide tus Tickets",
+                orderDesc: 'Elige cuántos quieres (recuerda: <strong>cada 6 tickets, 1 GRATIS</strong>) y envía un mensaje a <strong>Carlos (672 89 08 54)</strong> para concretar la entrega.',
+                step1Label: "1. Cantidad de tickets",
+                step1Badge: "Cada 6 → 1 GRATIS",
+                pack1Name: "1 Ticket",
+                pack4Name: "Tira 4 Colores",
+                pack6Badge: "+1 GRATIS",
+                pack6Name: "6 → 7 tickets",
+                pack12Badge: "+2 GRATIS",
+                pack12Name: "12 → 14 tickets",
+                paidTicketsLabel: "Tickets que pagas:",
+                step2Label: "2. Tus datos básicos",
+                nameLabel: "Tu nombre *",
+                namePlaceholder: "Ej. Marc Soler",
+                errName: "Por favor, escribe tu nombre.",
+                paymentLabel: "¿Cómo prefieres pagar?",
+                payTransferShort: "Transferencia",
+                payCashShort: "Efectivo",
+                paymentChangeNote: "Si cambias de opinión, puedes cambiar el método de pago escribiéndonos por WhatsApp antes de la entrega.",
+                deliveryChatNote: "El lugar y hora de entrega en la provincia de Barcelona lo concretamos por mensaje de WhatsApp (no atendemos llamadas).",
+                summaryReceiveLabel: "Recibes en mano",
+                summaryTotalLabel: "Total",
+                btnSendWa: "Enviar mensaje a Carlos (672 89 08 54)",
+                thanksTitle: "¡Muchas gracias por ayudarnos con nuestro viaje de fin de curso!",
+                thanksBody: 'De parte de <strong>Carlos, Ángel, Albert, Walter y Claudio</strong> y todos los compañeros de <strong>4º de ESO de l\'Escola IPSE de Barcelona</strong>, agradecemos de corazón cada ticket y cada pequeño granito de arena. Si te ha gustado la iniciativa, <strong>compártela con tus amigos, familia y conocidos</strong> para que también puedan participar.',
+                thanksShareBtn: "Compartir con amigos y familia",
+                thanksWaBtn: "Mensaje WhatsApp: 672 89 08 54",
+                footerLine1: "Viaje Fin de Curso · 4º ESO Escola IPSE Barcelona",
+                footerLine2: "Sorteo oficial Bye Bye Group · Combinación ganadora ONCE 24 de junio · Solo mensajes WhatsApp: 672 89 08 54",
+                shareModalTitle: "Compartir este sorteo",
+                shareModalBody: 'Envía esta web a tus <strong>amigos, familia o grupos de WhatsApp</strong> para ayudar al viaje de fin de curso de 4º de ESO de la Escola IPSE:',
+                shareUrlLabel: "Enlace público de la web",
+                shareUrlHint: "Cuando subas la web a Internet se rellenará solo, o puedes pegar aquí tu enlace público.",
+                shareModalWaBtn: "Compartir por WhatsApp",
+                shareModalCopyBtn: "Copiar enlace de la web",
+                shareCopied: "¡Enlace copiado! Ya puedes pegarlo donde quieras."
+            },
+            ca: {
+                headerTitle: "Viatge Fi de Curs · Escola IPSE",
+                headerSub: "4t ESO Barcelona · Carlos (672 89 08 54)",
+                navPiggy: "Guardiola",
+                navPrizes: "Premis",
+                navTickets: "Tiquets",
+                navRules: "Bases Legals",
+                navDelivery: "Com Funciona",
+                navOrder: "Demanar",
+                btnShare: "Compartir",
+                piggyBadge: "Guardiola del Viatge · 4t ESO IPSE",
+                piggyLabel: "Estat actual de la nostra guardiola",
+                piggyAmount: "Diners recaptats: 115 €",
+                piggySub: "Acabem de començar i la nostra guardiola encara és força buida! Amb cada tiquet de 3 € ens ajudes a omplir-la per al viatge de fi de curs d'en Carlos, l'Ángel, l'Albert, en Walter i en Claudio.",
+                piggyCta: "Ajudar-nos a omplir la guardiola",
+                heroBadge: "Alumnes de 4t d'ESO · Escola IPSE Barcelona",
+                heroTitle: 'Guanya un <span class="underline decoration-amber-400 decoration-4 underline-offset-4">creuer</span> o tria el premi que prefereixis, només per 3 €',
+                heroSubtitle: "Mira amb esperança i deixa que la sort et sorprengui: aquest 24 de juny amb l'ONCE, el premi que prefereixis pot ser teu mentre impulses el nostre viatge de fi de curs.",
+                heroDesc: 'Som en <strong>Carlos, l\'Ángel, l\'Albert, en Walter i en Claudio</strong>, alumnes de <strong>4t d\'ESO de l\'Escola IPSE</strong> recaptant fons per al nostre viatge de fi de curs. Participa per només <strong>3 €</strong> al sorteig oficial de l\'<strong>ONCE del 24 de juny</strong>.',
+                logoBBGSub: "Organitzador oficial del sorteig",
+                logoONCETitle: "Cupó Diari · 24 Juny",
+                logoONCESub: "Coincidència exacta de 5 xifres",
+                promoBanner: 'PROMO ESPECIAL: <span class="font-normal">Per cada 6 tiquets que compris, et regalem</span> 1 TIQUET GRATIS (7 per 18 €).',
+                countdownLabel: "Compte enrere · Sorteig 24 de juny",
+                cdDays: "Dies",
+                cdHours: "Hores",
+                cdMin: "Min",
+                cdSec: "Seg",
+                heroBtnOrder: "Demanar els meus tiquets",
+                heroBtnWa: "Missatge WhatsApp: 672 89 08 54",
+                prizesKicker: "Si et toca, tu tries",
+                prizesTitle: "Els 8 Premis Disponibles",
+                prizesDesc: 'Si les 5 xifres de la teva butlleta coincideixen amb el sorteig de l\'<strong>ONCE del 24 de juny</strong>, esculls un d\'aquests 8 premis:',
+                prize1: "Creuer per a 2 persones",
+                ticketsTitle: "Així són els nostres Tiquets Oficials",
+                ticketsDesc: 'Cada tiquet val <strong>3 €</strong>. La tira oficial ve en <strong>4 colors</strong> amb números en salts de 25.000.',
+                ticketDonation: "Donatiu 3 €",
+                ticketDrawWord: "SORTEIG",
+                ticketDateWord: "ONCE · 24 de juny",
+                ticketList1: "• Creuer per a 2 persones",
+                ticketList2: "• PC Mac o Smart TV",
+                ticketList3: "• iPad, iPhone o Samsung",
+                ticketList4: "• PlayStation o Xbox",
+                ticketSampleNum: "Exemple de número",
+                legalTitle: "Condicions Generals del Sorteig (Revers Oficial)",
+                legalSub: "Bases impreses a cada butlleta oficial de Bye Bye Group",
+                legal1Title: "1. Objecte",
+                legal1Body: "El present sorteig té per finalitat promoure la fidelització amb els nostres clients. Té caràcter no lucratiu.",
+                legal2Title: "2. Sorteig (24 de juny · ONCE)",
+                legal2Body: 'La participació premiada serà aquella que coincideixi amb els seus <strong>cinc dígits</strong> amb el sorteig del <strong>24 de juny de l\'ONCE</strong>.',
+                legal3Title: "3. Premis a triar",
+                legal3Body: "A seleccionar un entre: Creuer per a dues persones, PC Mac, Smart TV, iPad, iPhone, Samsung, PlayStation o Xbox segons disponibilitat.",
+                legal4Title: "4. Entrega i reclamació (Termini: 7 dies)",
+                legal4Body: 'El/la guanyador/a haurà d\'enviar un correu a <a href="mailto:info@byebyegroup.com" class="font-bold underline">info@byebyegroup.com</a> dins dels <strong>7 dies posteriors</strong> al sorteig del 24 de juny. Si no és així, s\'entendrà deserta.',
+                legal5Title: "5. Cancel·lació o ampliació dels sortejos",
+                legal5Body: "Els premis no són transferibles ni bescanviables per diners en efectiu. L'organitzador només és responsable de posar a disposició de cada guanyador el premi del qual va resultar guanyador.",
+                delKicker: "Fàcil, directe i de confiança",
+                delTitle: "Entrega en Mà i Formes de Pagament",
+                delDesc: "Quedem amb tu per missatge de WhatsApp i t'entreguem les teves butlletes físiques originals.",
+                delCard1Title: "Només Província de Barcelona",
+                delCard1Body: 'Entrega en mà exclusiva a la <strong>província de Barcelona</strong>. Concretem l\'<strong>hora i el lloc per missatge de WhatsApp</strong>, i un membre del grup (<strong>Carlos, Ángel, Albert, Walter o Claudio</strong>) es desplaça personalment a portar-te el teu tiquet donant les <strong>màximes comoditats</strong>.',
+                badgeTransfer: "Transferència",
+                badgeCash: "Efectiu",
+                delCard2Title: "Bizum, Transferència o Efectiu",
+                delCard2Body: 'Pots pagar per <strong>Bizum</strong>, <strong>Transferència Bancària</strong> o <strong>efectiu</strong> en entregar. Si canvies d\'opinió, pots <strong>canviar el mètode de pagament per WhatsApp</strong> en qualsevol moment abans de l\'entrega.',
+                delCard3Title: "Dubtes? Escriu-nos per WhatsApp",
+                delCard3Body: 'Per a més informació, <strong>envia un missatge escrit per WhatsApp</strong> a en <strong>Carlos</strong> (només missatges, no trucades):',
+                orderKicker: "Reserva en 10 segons",
+                orderTitle: "Demana els teus Tiquets",
+                orderDesc: 'Tria quants en vols (recorda: <strong>cada 6 tiquets, 1 GRATIS</strong>) i envia un missatge a en <strong>Carlos (672 89 08 54)</strong> per concretar l\'entrega.',
+                step1Label: "1. Quantitat de tiquets",
+                step1Badge: "Cada 6 → 1 GRATIS",
+                pack1Name: "1 Tiquet",
+                pack4Name: "Tira 4 Colors",
+                pack6Badge: "+1 GRATIS",
+                pack6Name: "6 → 7 tiquets",
+                pack12Badge: "+2 GRATIS",
+                pack12Name: "12 → 14 tiquets",
+                paidTicketsLabel: "Tiquets que pagues:",
+                step2Label: "2. Les teves dades bàsiques",
+                nameLabel: "El teu nom *",
+                namePlaceholder: "Ex. Marc Soler",
+                errName: "Si us plau, escriu el teu nom.",
+                paymentLabel: "Com prefereixes pagar?",
+                payTransferShort: "Transferència",
+                payCashShort: "Efectiu",
+                paymentChangeNote: "Si canvies d'opinió, pots canviar el mètode de pagament escrivint-nos per WhatsApp abans de l'entrega.",
+                deliveryChatNote: "El lloc i hora d'entrega a la província de Barcelona ho concretem per missatge de WhatsApp (no atenem trucades).",
+                summaryReceiveLabel: "Reps en mà",
+                summaryTotalLabel: "Total",
+                btnSendWa: "Enviar missatge a en Carlos (672 89 08 54)",
+                thanksTitle: "Moltes gràcies per ajudar-nos amb el nostre viatge de fi de curs!",
+                thanksBody: 'De part d\'en <strong>Carlos, l\'Ángel, l\'Albert, en Walter i en Claudio</strong> i tots els companys de <strong>4t d\'ESO de l\'Escola IPSE de Barcelona</strong>, agraïm de cor cada tiquet i cada petit granet de sorra. Si t\'ha agradat la iniciativa, <strong>comparteix-la amb els teus amics, família i coneguts</strong> perquè també hi puguin participar.',
+                thanksShareBtn: "Compartir amb amics i família",
+                thanksWaBtn: "Missatge WhatsApp: 672 89 08 54",
+                footerLine1: "Viatge Fi de Curs · 4t ESO Escola IPSE Barcelona",
+                footerLine2: "Sorteig oficial Bye Bye Group · Combinació guanyadora ONCE 24 de juny · Només missatges WhatsApp: 672 89 08 54",
+                shareModalTitle: "Compartir aquest sorteig",
+                shareModalBody: 'Envia aquest web als teus <strong>amics, família o grups de WhatsApp</strong> per ajudar al viatge de fi de curs de 4t d\'ESO de l\'Escola IPSE:',
+                shareUrlLabel: "Enllaç públic del web",
+                shareUrlHint: "Quan pugis el web a Internet s'omplirà sol, o pots enganxar aquí el teu enllaç públic.",
+                shareModalWaBtn: "Compartir per WhatsApp",
+                shareModalCopyBtn: "Copiar enllaç del web",
+                shareCopied: "Enllaç copiat! Ja el pots enganxar on vulguis."
+            },
+            en: {
+                headerTitle: "Graduation Trip · Escola IPSE",
+                headerSub: "4th ESO Barcelona · Carlos (672 89 08 54)",
+                navPiggy: "Piggy Bank",
+                navPrizes: "Prizes",
+                navTickets: "Tickets",
+                navRules: "Legal Rules",
+                navDelivery: "How It Works",
+                navOrder: "Order",
+                btnShare: "Share",
+                piggyBadge: "Trip Piggy Bank · 4th ESO IPSE",
+                piggyLabel: "Current piggy bank status",
+                piggyAmount: "Money raised: €115",
+                piggySub: "We just got started and our piggy bank is still pretty empty! With every €3 ticket you help us fill it up for Carlos, Ángel, Albert, Walter & Claudio's graduation trip.",
+                piggyCta: "Help us fill the piggy bank",
+                heroBadge: "4th ESO Students · Escola IPSE Barcelona",
+                heroTitle: 'Win a <span class="underline decoration-amber-400 decoration-4 underline-offset-4">cruise</span> or choose the prize you prefer, for just €3',
+                heroSubtitle: "Look forward with hope and let luck surprise you: this June 24th with ONCE, the prize of your choice could be yours while supporting our end-of-year trip.",
+                heroDesc: 'We are <strong>Carlos, Ángel, Albert, Walter, and Claudio</strong>, <strong>4th ESO students at Escola IPSE</strong> fundraising for our graduation trip. Join for just <strong>€3</strong> in the official <strong>ONCE draw on June 24</strong>.',
+                logoBBGSub: "Official raffle organizer",
+                logoONCETitle: "Daily Draw · June 24",
+                logoONCESub: "Exact 5-digit match",
+                promoBanner: 'SPECIAL PROMO: <span class="font-normal">For every 6 tickets you buy, you get</span> 1 FREE TICKET (7 for €18).',
+                countdownLabel: "Countdown · June 24 Draw",
+                cdDays: "Days",
+                cdHours: "Hours",
+                cdMin: "Min",
+                cdSec: "Sec",
+                heroBtnOrder: "Order my tickets",
+                heroBtnWa: "WhatsApp Message: 672 89 08 54",
+                prizesKicker: "If you win, you pick",
+                prizesTitle: "The 8 Available Prizes",
+                prizesDesc: 'If the 5 digits on your ticket match the <strong>ONCE draw on June 24</strong>, you choose one of these 8 prizes:',
+                prize1: "Cruise for 2 people",
+                ticketsTitle: "Our Official Tickets",
+                ticketsDesc: 'Each ticket costs <strong>€3</strong>. The official strip comes in <strong>4 colors</strong> with numbers spaced by 25,000.',
+                ticketDonation: "Donation €3",
+                ticketDrawWord: "RAFFLE",
+                ticketDateWord: "ONCE · June 24",
+                ticketList1: "• Cruise for 2 people",
+                ticketList2: "• Mac PC or Smart TV",
+                ticketList3: "• iPad, iPhone or Samsung",
+                ticketList4: "• PlayStation or Xbox",
+                ticketSampleNum: "Sample number",
+                legalTitle: "Official Raffle Terms & Conditions (Ticket Back)",
+                legalSub: "Official rules printed on every Bye Bye Group ticket",
+                legal1Title: "1. Purpose",
+                legal1Body: "This raffle aims to promote customer loyalty and is non-profit.",
+                legal2Title: "2. Draw (June 24 · ONCE)",
+                legal2Body: 'The winning ticket will be the one matching all <strong>five digits</strong> of the official <strong>ONCE draw on June 24</strong>.',
+                legal3Title: "3. Prizes to choose from",
+                legal3Body: "Winner chooses one from: Cruise for two people, Mac PC, Smart TV, iPad, iPhone, Samsung, PlayStation or Xbox subject to availability.",
+                legal4Title: "4. Claiming the prize (7-day deadline)",
+                legal4Body: 'The winner must send an email to <a href="mailto:info@byebyegroup.com" class="font-bold underline">info@byebyegroup.com</a> within <strong>7 days after</strong> the June 24 draw, otherwise the prize is forfeited.',
+                legal5Title: "5. General rules",
+                legal5Body: "Prizes are non-transferable and cannot be exchanged for cash. The organizer is solely responsible for providing the selected prize to the winner.",
+                delKicker: "Simple, direct and trustworthy",
+                delTitle: "Hand Delivery & Payment Methods",
+                delDesc: "We arrange a time and place via WhatsApp message and hand you your original physical tickets.",
+                delCard1Title: "Barcelona Province Only",
+                delCard1Body: 'Hand delivery exclusively across <strong>Barcelona province</strong>. We agree on the <strong>time and meeting place via WhatsApp message</strong>, and a team member (<strong>Carlos, Ángel, Albert, Walter, or Claudio</strong>) personally brings your ticket offering <strong>maximum convenience</strong>.',
+                badgeTransfer: "Bank Transfer",
+                badgeCash: "Cash",
+                delCard2Title: "Bizum, Bank Transfer or Cash",
+                delCard2Body: 'Pay via <strong>Bizum</strong>, <strong>Bank Transfer</strong> or <strong>cash</strong> upon delivery. If you change your mind, you can <strong>change your payment method via WhatsApp</strong> anytime before delivery.',
+                delCard3Title: "Questions? Message us on WhatsApp",
+                delCard3Body: 'For more info, <strong>send a written WhatsApp message</strong> to <strong>Carlos</strong> (messages only, no calls):',
+                orderKicker: "Reserve in 10 seconds",
+                orderTitle: "Order your Tickets",
+                orderDesc: 'Choose how many you want (remember: <strong>every 6 tickets, 1 FREE</strong>) and message <strong>Carlos (672 89 08 54)</strong> to arrange delivery.',
+                step1Label: "1. Ticket quantity",
+                step1Badge: "Every 6 → 1 FREE",
+                pack1Name: "1 Ticket",
+                pack4Name: "4-Color Strip",
+                pack6Badge: "+1 FREE",
+                pack6Name: "6 → 7 tickets",
+                pack12Badge: "+2 FREE",
+                pack12Name: "12 → 14 tickets",
+                paidTicketsLabel: "Tickets you pay for:",
+                step2Label: "2. Your basic details",
+                nameLabel: "Your name *",
+                namePlaceholder: "e.g. Marc Soler",
+                errName: "Please enter your name.",
+                paymentLabel: "How would you like to pay?",
+                payTransferShort: "Transfer",
+                payCashShort: "Cash",
+                paymentChangeNote: "If you change your mind, you can change the payment method by messaging us on WhatsApp before delivery.",
+                deliveryChatNote: "We will agree on the delivery place and time in Barcelona province via WhatsApp message (messages only, no calls).",
+                summaryReceiveLabel: "You receive",
+                summaryTotalLabel: "Total",
+                btnSendWa: "Message Carlos on WhatsApp (672 89 08 54)",
+                thanksTitle: "Thank you so much for supporting our graduation trip!",
+                thanksBody: 'On behalf of <strong>Carlos, Ángel, Albert, Walter, and Claudio</strong> and all <strong>4th ESO students at Escola IPSE Barcelona</strong>, we sincerely thank you for every ticket and every bit of help. Please <strong>share this page with your friends, family and acquaintances</strong> so they can join too.',
+                thanksShareBtn: "Share with friends & family",
+                thanksWaBtn: "WhatsApp Message: 672 89 08 54",
+                footerLine1: "Graduation Trip · 4th ESO Escola IPSE Barcelona",
+                footerLine2: "Official Bye Bye Group Raffle · ONCE Draw June 24 · WhatsApp messages only: 672 89 08 54",
+                shareModalTitle: "Share this raffle",
+                shareModalBody: 'Send this page to your <strong>friends, family or WhatsApp groups</strong> to help the 4th ESO graduation trip at Escola IPSE:',
+                shareUrlLabel: "Public website link",
+                shareUrlHint: "Once published online it fills in automatically, or paste your public URL here.",
+                shareModalWaBtn: "Share via WhatsApp",
+                shareModalCopyBtn: "Copy website link",
+                shareCopied: "Link copied! You can paste it anywhere now."
+            }
+        };
+
+        // =========================================================================
+        // MOTOR DE RAZONAMIENTO MULTI-INTENCIÓN DEL ASISTENTE VIRTUAL (ES/CA/EN)
+        // =========================================================================
+        const AI_ENGINE_DATA = {
+            es: {
+                title: "Asistente Inteligente · IPSE",
+                status: "En línea · Analiza tu consulta",
+                badge: "IA",
+                launcher: "Asistente Sorteo",
+                placeholder: "Pregunta lo que quieras o pon tu presupuesto...",
+                thinking: "Analizando tu consulta...",
+                nudges: [
+                    "☀️ ¡Oye, no te vayas sin tu número! Este 24 de junio con la ONCE puedes llevarte un Crucero o un Mac por solo 3 €.",
+                    "🎁 ¡Recuerda! Por cada 6 tickets te regalamos 1 GRATIS (7 oportunidades por 18 €). ¡Se están agotando!",
+                    "⏳ ¡Quedan pocos boletos! Carlos, Ángel, Albert, Walter y Claudio te lo llevamos en mano en Barcelona."
+                ],
+                welcome: "¡Hola! 👋✨ Mira con esperanza al <strong>24 de junio</strong>: por solo <strong>3 €</strong> puedes ganar un <strong>Crucero para 2, PC Mac, iPhone, PS5</strong> y mucho más en el sorteo de la <strong>ONCE</strong>.<br><br>🔥 <strong>¡No dejes pasar la suerte!</strong> Pregúntame lo que quieras (presupuestos, compras en grupo, entregas o premios) o dime cuántos tickets te reservo hoy con <strong>Carlos</strong>:",
+                chips: [
+                    { query: "Somos 4 amigos y ponemos 5 euros cada uno, ¿cuántos tickets tenemos?", label: "👥 Grupo de amigos" },
+                    { query: "¿Cómo sé que esto es real y de l'Escola IPSE?", label: "🛡️ ¿Es de fiar?" },
+                    { query: "¿Qué pasa si vivo fuera de Barcelona o prefiero dinero?", label: "📍 Fuera de BCN / Premio" },
+                    { query: "No suelo tener suerte, ¿por qué debería comprar?", label: "🍀 No tengo suerte" }
+                ],
+                btnReserveDefault: "Reservar Pack 6+1 GRATIS (18 €)",
+                btnReserveCustom: (total, paid, free, euros) =>
+                    free > 0
+                        ? `¡Reservar ya ${total} tickets (${paid}+${free} GRATIS) por ${euros} €!`
+                        : `¡Reservar ya ${total} ticket${total > 1 ? 's' : ''} por ${euros} €!`,
+                waCustomText: (total, paid, free, euros, prizeHint) => {
+                    const prizePart = prizeHint ? ` (me encantaría ganar: ${prizeHint})` : '';
+                    return free > 0
+                        ? `¡Hola Carlos! El asistente de la web me ha convencido 😄 Quiero reservar ${total} tickets (${paid} pagados + ${free} GRATIS por la promo 6+1) por ${euros} €${prizePart} para el sorteo de 4º ESO de la Escola IPSE.`
+                        : `¡Hola Carlos! El asistente de la web me ha convencido 😄 Quiero reservar ${total} ticket${total > 1 ? 's' : ''} por ${euros} €${prizePart} para el sorteo de 4º ESO de la Escola IPSE.`;
+                }
+            },
+            ca: {
+                title: "Assistent Intel·ligent · IPSE",
+                status: "En línia · Analitza la consulta",
+                badge: "IA",
+                launcher: "Assistent Sorteig",
+                placeholder: "Pregunta el que vulguis o posa el teu pressupost...",
+                thinking: "Analitzant la teva consulta...",
+                nudges: [
+                    "☀️ Ei, no marxis sense el teu número! Aquest 24 de juny amb l'ONCE pots guanyar un Creuer o un Mac per només 3 €.",
+                    "🎁 Recorda! Per cada 6 tiquets et regalem 1 GRATIS (7 oportunitats per 18 €). S'estan esgotant!",
+                    "⏳ Queden poques butlletes! En Carlos, l'Ángel, l'Albert, en Walter i en Claudio te'l portem en mà a Barcelona."
+                ],
+                welcome: "Hola! 👋✨ Mira amb esperança al <strong>24 de juny</strong>: per només <strong>3 €</strong> pots guanyar un <strong>Creuer per a 2, PC Mac, iPhone, PS5</strong> i molt més al sorteig de l'<strong>ONCE</strong>.<br><br>🔥 <strong>No deixis passar la sort!</strong> Pregunta'm el que vulguis (pressupostos, compres en grup, entregues o premis) o digues-me quants tiquets et reservo avui amb en <strong>Carlos</strong>:",
+                chips: [
+                    { query: "Som 4 amics i posem 5 euros cadascú, quants tiquets tenim?", label: "👥 Grup d'amics" },
+                    { query: "Com sé que això és real i de l'Escola IPSE?", label: "🛡️ És de fiar?" },
+                    { query: "Què passa si visc fora de Barcelona o prefereixo diners?", label: "📍 Fora de BCN / Premi" },
+                    { query: "No acostumo a tenir sort, per què hauria de comprar?", label: "🍀 No tinc sort" }
+                ],
+                btnReserveDefault: "Reservar Pack 6+1 GRATIS (18 €)",
+                btnReserveCustom: (total, paid, free, euros) =>
+                    free > 0
+                        ? `Reservar ara ${total} tiquets (${paid}+${free} GRATIS) per ${euros} €!`
+                        : `Reservar ara ${total} tiquet${total > 1 ? 's' : ''} per ${euros} €!`,
+                waCustomText: (total, paid, free, euros, prizeHint) => {
+                    const prizePart = prizeHint ? ` (m'encantaria guanyar: ${prizeHint})` : '';
+                    return free > 0
+                        ? `Hola Carlos! L'assistent del web m'ha convençut 😄 Vull reservar ${total} tiquets (${paid} pagats + ${free} GRATIS per la promo 6+1) per ${euros} €${prizePart} per al sorteig de 4t d'ESO de l'Escola IPSE.`
+                        : `Hola Carlos! L'assistent del web m'ha convençut 😄 Vull reservar ${total} tiquet${total > 1 ? 's' : ''} per ${euros} €${prizePart} per al sorteig de 4t d'ESO de l'Escola IPSE.`;
+                }
+            },
+            en: {
+                title: "Smart Assistant · IPSE",
+                status: "Online · Analyzes your query",
+                badge: "AI",
+                launcher: "Raffle Assistant",
+                placeholder: "Ask anything or enter your budget...",
+                thinking: "Analyzing your question...",
+                nudges: [
+                    "☀️ Hey, don't leave without your ticket! On June 24 with ONCE you could win a Cruise or a Mac for just €3.",
+                    "🎁 Remember! Every 6 tickets gets you 1 FREE (7 chances for €18). Selling fast!",
+                    "⏳ Almost sold out! Carlos, Ángel, Albert, Walter & Claudio hand-deliver across Barcelona."
+                ],
+                welcome: "Hi there! 👋✨ Look forward with hope to <strong>June 24th</strong>: for just <strong>€3</strong> you can win a <strong>Cruise for 2, Mac PC, iPhone, PS5</strong> and more in the official <strong>ONCE draw</strong>.<br><br>🔥 <strong>Don't miss your lucky shot!</strong> Ask me anything (budgets, group splits, delivery, or prizes) or tell me how many tickets to reserve today with <strong>Carlos</strong>:",
+                chips: [
+                    { query: "We are 4 friends putting 5 euros each, how many tickets do we get?", label: "👥 Group split" },
+                    { query: "How do I know this is real and from Escola IPSE?", label: "🛡️ Is it legit?" },
+                    { query: "What if I live outside Barcelona or prefer cash?", label: "📍 Outside BCN / Cash" },
+                    { query: "I never have luck, why should I buy?", label: "🍀 Bad luck" }
+                ],
+                btnReserveDefault: "Reserve 6+1 FREE Pack (€18)",
+                btnReserveCustom: (total, paid, free, euros) =>
+                    free > 0
+                        ? `Reserve ${total} tickets (${paid}+${free} FREE) for €${euros} now!`
+                        : `Reserve ${total} ticket${total > 1 ? 's' : ''} for €${euros} now!`,
+                waCustomText: (total, paid, free, euros, prizeHint) => {
+                    const prizePart = prizeHint ? ` (hoping to win: ${prizeHint})` : '';
+                    return free > 0
+                        ? `Hi Carlos! The website assistant convinced me 😄 I'd like to reserve ${total} tickets (${paid} paid + ${free} FREE via 6+1 promo) for €${euros}${prizePart} for the Escola IPSE 4th ESO raffle.`
+                        : `Hi Carlos! The website assistant convinced me 😄 I'd like to reserve ${total} ticket${total > 1 ? 's' : ''} for €${euros}${prizePart} for the Escola IPSE 4th ESO raffle.`;
+                }
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            let currentLang = 'es';
+            let paidTickets = 6;
+            let selectedPayment = 'Bizum';
+
+            // =========================================================
+            // 1. MODO CLARO / OSCURO
+            // =========================================================
+            const htmlEl = document.documentElement;
+            const btnTheme = document.getElementById('btn-theme');
+            const themeIcon = document.getElementById('theme-icon');
+
+            btnTheme.addEventListener('click', () => {
+                const isDark = htmlEl.classList.toggle('dark');
+                themeIcon.className = isDark ? 'ph-bold ph-sun text-base' : 'ph-bold ph-moon text-base';
+            });
+
+            // =========================================================
+            // 1.5 MODO PANTALLA GRANDE (FULLSCREEN)
+            // =========================================================
+            const btnFullscreen = document.getElementById('btn-fullscreen');
+            const fullscreenIcon = document.getElementById('fullscreen-icon');
+
+            function updateFullscreenIcon() {
+                const isFull = !!document.fullscreenElement;
+                fullscreenIcon.className = isFull ? 'ph-bold ph-corners-in text-base' : 'ph-bold ph-corners-out text-base';
+            }
+
+            if (btnFullscreen) {
+                btnFullscreen.addEventListener('click', async () => {
+                    try {
+                        if (!document.fullscreenElement) {
+                            await document.documentElement.requestFullscreen();
+                        } else {
+                            await document.exitFullscreen();
+                        }
+                    } catch (e) {
+                        // Fallback visual si el navegador restringe Fullscreen API
+                        document.body.classList.toggle('max-w-none');
+                    }
+                    updateFullscreenIcon();
+                });
+                document.addEventListener('fullscreenchange', updateFullscreenIcon);
+            }
+
+            // =========================================================
+            // 2. MÚSICA AMBIENTE SUAVE (WEB AUDIO API)
+            // =========================================================
+            const btnMusic = document.getElementById('btn-music');
+            const musicIcon = document.getElementById('music-icon');
+            let audioCtx = null;
+            let musicPlaying = false;
+            let musicTimer = null;
+            let stepIndex = 0;
+
+            const lofiProgression = [
+                [261.63, 329.63, 392.00, 493.88], // Cmaj7
+                [220.00, 261.63, 329.63, 392.00], // Am7
+                [174.61, 220.00, 261.63, 329.63], // Fmaj7
+                [196.00, 246.94, 293.66, 349.23]  // G7
+            ];
+
+            function playWarmElectricPianoStep(freqs) {
+                if (!audioCtx || !musicPlaying) return;
+                const now = audioCtx.currentTime;
+                freqs.forEach((freq, i) => {
+                    const osc = audioCtx.createOscillator();
+                    const gain = audioCtx.createGain();
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(freq, now + i * 0.06);
+                    gain.gain.setValueAtTime(0.0001, now + i * 0.06);
+                    gain.gain.exponentialRampToValueAtTime(0.025, now + i * 0.06 + 0.25);
+                    gain.gain.exponentialRampToValueAtTime(0.0001, now + i * 0.06 + 2.4);
+                    osc.connect(gain);
+                    gain.connect(audioCtx.destination);
+                    osc.start(now + i * 0.06);
+                    osc.stop(now + i * 0.06 + 2.5);
+                });
+            }
+
+            function toggleMusic() {
+                if (!musicPlaying) {
+                    if (!audioCtx) {
+                        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+                        audioCtx = new AudioContextClass();
+                    }
+                    if (audioCtx.state === 'suspended') {
+                        audioCtx.resume();
+                    }
+                    musicPlaying = true;
+                    musicIcon.className = 'ph-fill ph-music-notes text-base text-pink-600 dark:text-amber-300';
+                    btnMusic.classList.add('ring-2', 'ring-pink-400/50', 'dark:ring-amber-400/50');
+
+                    playWarmElectricPianoStep(lofiProgression[stepIndex % lofiProgression.length]);
+                    stepIndex++;
+                    musicTimer = setInterval(() => {
+                        playWarmElectricPianoStep(lofiProgression[stepIndex % lofiProgression.length]);
+                        stepIndex++;
+                    }, 2700);
+                } else {
+                    musicPlaying = false;
+                    clearInterval(musicTimer);
+                    musicIcon.className = 'ph-bold ph-speaker-simple-slash text-base';
+                    btnMusic.classList.remove('ring-2', 'ring-pink-400/50', 'dark:ring-amber-400/50');
+                }
+            }
+
+            btnMusic.addEventListener('click', toggleMusic);
+
+            // =========================================================
+            // 3. MULTIIDIOMA DINÁMICO (ES / CA / EN)
+            // =========================================================
+            const langButtons = document.querySelectorAll('[data-lang-btn]');
+            const inputName = document.getElementById('input-name');
+
+            function applyLanguage(lang) {
+                if (!TRANSLATIONS[lang]) return;
+                currentLang = lang;
+                htmlEl.setAttribute('lang', lang);
+                const dict = TRANSLATIONS[lang];
+
+                document.querySelectorAll('[data-i18n]').forEach(el => {
+                    const key = el.getAttribute('data-i18n');
+                    if (dict[key]) el.textContent = dict[key];
+                });
+
+                document.querySelectorAll('[data-i18n-html]').forEach(el => {
+                    const key = el.getAttribute('data-i18n-html');
+                    if (dict[key]) el.innerHTML = dict[key];
+                });
+
+                if (dict.namePlaceholder) {
+                    inputName.setAttribute('placeholder', dict.namePlaceholder);
+                }
+
+                langButtons.forEach(btn => {
+                    const bLang = btn.getAttribute('data-lang-btn');
+                    if (bLang === lang) {
+                        btn.classList.add('bg-white', 'dark:bg-slate-700', 'text-slate-900', 'dark:text-white', 'shadow-sm');
+                        btn.classList.remove('text-slate-600', 'dark:text-slate-400');
+                    } else {
+                        btn.classList.remove('bg-white', 'dark:bg-slate-700', 'text-slate-900', 'dark:text-white', 'shadow-sm');
+                        btn.classList.add('text-slate-600', 'dark:text-slate-400');
+                    }
+                });
+
+                const waQueries = {
+                    es: "Hola Carlos, tengo una consulta sobre los tickets del sorteo de 4º ESO de la Escola IPSE.",
+                    ca: "Hola Carlos, tinc una consulta sobre els tiquets del sorteig de 4t d'ESO de l'Escola IPSE.",
+                    en: "Hi Carlos, I have a question about the 4th ESO Escola IPSE raffle tickets."
+                };
+                const encodedQuery = encodeURIComponent(waQueries[lang]);
+                ['hero-wa-link', 'card-wa-link', 'footer-wa-link'].forEach(id => {
+                    const link = document.getElementById(id);
+                    if (link) link.href = `https://wa.me/${CONFIG_SORTEO.contacto.telefonoWhatsApp}?text=${encodedQuery}`;
+                });
+
+                updateOrderUI(paidTickets);
+            }
+
+            langButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    applyLanguage(btn.getAttribute('data-lang-btn'));
+                });
+            });
+
+            // =========================================================
+            // 4. CUENTA ATRÁS HASTA EL 24 DE JUNIO DE 2027
+            // =========================================================
+            const targetTime = new Date(CONFIG_SORTEO.fechaSorteo).getTime();
+
+            function refreshCountdown() {
+                const now = Date.now();
+                const diff = targetTime - now;
+
+                if (diff <= 0) {
+                    ['cd-days', 'cd-hours', 'cd-minutes', 'cd-seconds'].forEach(id => {
+                        document.getElementById(id).textContent = '00';
+                    });
+                    return;
+                }
+
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                document.getElementById('cd-days').textContent = String(days).padStart(2, '0');
+                document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('cd-minutes').textContent = String(minutes).padStart(2, '0');
+                document.getElementById('cd-seconds').textContent = String(seconds).padStart(2, '0');
+            }
+
+            refreshCountdown();
+            setInterval(refreshCountdown, 1000);
+
+            // =========================================================
+            // 5. CALCULADORA DE PACKS Y SELECTOR VISUAL DE PAGO
+            // =========================================================
+            const qtyInput = document.getElementById('qty-input');
+            const packOptions = document.querySelectorAll('.pack-option');
+            const payOptions = document.querySelectorAll('.pay-option');
+            const promoStatusText = document.getElementById('promo-status-text');
+            const summaryTickets = document.getElementById('summary-tickets');
+            const summaryPrice = document.getElementById('summary-price');
+
+            function updatePaymentSelector(val) {
+                selectedPayment = val;
+                payOptions.forEach(btn => {
+                    const bVal = btn.getAttribute('data-pay-val');
+                    btn.classList.remove(
+                        'border-[#05C3DD]', 'bg-[#05C3DD]/10',
+                        'border-indigo-500', 'bg-indigo-50', 'dark:bg-indigo-950/40',
+                        'border-emerald-500', 'bg-emerald-50', 'dark:bg-emerald-950/40',
+                        'border-slate-200', 'dark:border-slate-700'
+                    );
+                    if (bVal === val) {
+                        if (val === 'Bizum') {
+                            btn.classList.add('border-[#05C3DD]', 'bg-[#05C3DD]/10');
+                        } else if (val === 'Transferencia Bancaria') {
+                            btn.classList.add('border-indigo-500', 'bg-indigo-50', 'dark:bg-indigo-950/40');
+                        } else {
+                            btn.classList.add('border-emerald-500', 'bg-emerald-50', 'dark:bg-emerald-950/40');
+                        }
+                    } else {
+                        btn.classList.add('border-slate-200', 'dark:border-slate-700');
+                    }
+                });
+            }
+
+            payOptions.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    updatePaymentSelector(btn.getAttribute('data-pay-val'));
+                });
+            });
+
+            function computeOrder(paid) {
+                const free = Math.floor(paid / CONFIG_SORTEO.promoCada);
+                const totalTickets = paid + free;
+                const totalEuros = paid * CONFIG_SORTEO.precioPorTicket;
+                return { paid, free, totalTickets, totalEuros };
+            }
+
+            function updateOrderUI(newPaid) {
+                if (newPaid < 1) newPaid = 1;
+                if (newPaid > 200) newPaid = 200;
+                paidTickets = newPaid;
+                qtyInput.value = newPaid;
+
+                const { free, totalTickets, totalEuros } = computeOrder(newPaid);
+                summaryPrice.textContent = `${totalEuros} €`;
+
+                if (currentLang === 'ca') {
+                    summaryTickets.textContent = free > 0
+                        ? `${totalTickets} tiquets (${newPaid} + ${free} gratis)`
+                        : `${totalTickets} tiquet${totalTickets > 1 ? 's' : ''}`;
+                    if (free > 0) {
+                        promoStatusText.textContent = free === 1 ? '+1 tiquet gratis de regal' : `+${free} tiquets gratis de regal`;
+                    } else {
+                        const rem = CONFIG_SORTEO.promoCada - newPaid;
+                        promoStatusText.textContent = rem === 1 ? 'Afegeix-ne 1 més per endur-te un altre gratis' : `Afegeix-ne ${rem} més per aconseguir 1 gratis`;
+                    }
+                } else if (currentLang === 'en') {
+                    summaryTickets.textContent = free > 0
+                        ? `${totalTickets} tickets (${newPaid} + ${free} free)`
+                        : `${totalTickets} ticket${totalTickets > 1 ? 's' : ''}`;
+                    if (free > 0) {
+                        promoStatusText.textContent = free === 1 ? '+1 free bonus ticket' : `+${free} free bonus tickets`;
+                    } else {
+                        const rem = CONFIG_SORTEO.promoCada - newPaid;
+                        promoStatusText.textContent = rem === 1 ? 'Add 1 more to get 1 free ticket' : `Add ${rem} more to get 1 free ticket`;
+                    }
+                } else {
+                    summaryTickets.textContent = free > 0
+                        ? `${totalTickets} tickets (${newPaid} + ${free} gratis)`
+                        : `${totalTickets} ticket${totalTickets > 1 ? 's' : ''}`;
+                    if (free > 0) {
+                        promoStatusText.textContent = free === 1 ? '+1 ticket gratis de regalo' : `+${free} tickets gratis de regalo`;
+                    } else {
+                        const rem = CONFIG_SORTEO.promoCada - newPaid;
+                        promoStatusText.textContent = rem === 1 ? 'Añade 1 más para llevarte otro gratis' : `Añade ${rem} más para conseguir 1 gratis`;
+                    }
+                }
+
+                if (free > 0) {
+                    promoStatusText.classList.remove('text-slate-500', 'dark:text-slate-400');
+                    promoStatusText.classList.add('text-emerald-700', 'dark:text-emerald-400');
+                } else {
+                    promoStatusText.classList.remove('text-emerald-700', 'dark:text-emerald-400');
+                    promoStatusText.classList.add('text-slate-500', 'dark:text-slate-400');
+                }
+
+                packOptions.forEach(opt => {
+                    const optPaid = parseInt(opt.getAttribute('data-paid'), 10);
+                    if (optPaid === newPaid) {
+                        opt.classList.add('border-slate-900', 'dark:border-amber-400', 'bg-slate-50', 'dark:bg-slate-800/80');
+                        opt.classList.remove('border-slate-200', 'dark:border-slate-700');
+                    } else {
+                        opt.classList.remove('border-slate-900', 'dark:border-amber-400', 'bg-slate-50', 'dark:bg-slate-800/80');
+                        opt.classList.add('border-slate-200', 'dark:border-slate-700');
+                    }
+                });
+            }
+
+            packOptions.forEach(opt => {
+                opt.addEventListener('click', () => {
+                    updateOrderUI(parseInt(opt.getAttribute('data-paid'), 10));
+                });
+            });
+
+            document.getElementById('qty-minus').addEventListener('click', () => updateOrderUI(paidTickets - 1));
+            document.getElementById('qty-plus').addEventListener('click', () => updateOrderUI(paidTickets + 1));
+            qtyInput.addEventListener('input', (e) => {
+                const val = parseInt(e.target.value, 10);
+                if (!isNaN(val)) updateOrderUI(val);
+            });
+
+            updateOrderUI(6);
+
+            // =========================================================
+            // 6. ENVÍO DE MENSAJE WHATSAPP A CARLOS (672 89 08 54)
+            // =========================================================
+            const errName = document.getElementById('err-name');
+
+            inputName.addEventListener('input', () => {
+                if (inputName.value.trim()) {
+                    errName.classList.add('hidden');
+                    inputName.classList.remove('border-red-500');
+                }
+            });
+
+            function getLocalizedPaymentName() {
+                if (selectedPayment === 'Bizum') return 'Bizum';
+                if (selectedPayment === 'Transferencia Bancaria') {
+                    return currentLang === 'ca' ? 'Transferència Bancària' : currentLang === 'en' ? 'Bank Transfer' : 'Transferencia Bancaria';
+                }
+                return currentLang === 'ca' ? 'Efectiu en entregar' : currentLang === 'en' ? 'Cash on delivery' : 'Efectivo al entregar';
+            }
+
+            document.getElementById('btn-send-whatsapp').addEventListener('click', () => {
+                const name = inputName.value.trim();
+                if (!name) {
+                    errName.classList.remove('hidden');
+                    inputName.classList.add('border-red-500');
+                    inputName.focus();
+                    return;
+                }
+
+                const { paid, free, totalTickets, totalEuros } = computeOrder(paidTickets);
+                const paymentSelectedText = getLocalizedPaymentName();
+
+                let msg = '';
+                if (currentLang === 'ca') {
+                    const qtyStr = free > 0
+                        ? `${totalTickets} tiquets (${paid} pagats + ${free} GRATIS per promo 6+1)`
+                        : `${totalTickets} tiquet${totalTickets > 1 ? 's' : ''}`;
+                    msg = `Hola Carlos! Vull demanar tiquets del sorteig *Bye Bye Group* (ONCE 24 de juny) per ajudar amb el vostre viatge de fi de curs de 4t d'ESO de l'Escola IPSE.\n\n` +
+                        `👤 *Nom:* ${name}\n` +
+                        `🎟️ *Quantitat:* ${qtyStr}\n` +
+                        `💶 *Import:* ${totalEuros} €\n` +
+                        `💳 *Mètode de pagament inicial:* ${paymentSelectedText} (si canvio d'opinió t'ho dic per aquí)\n\n` +
+                        `Com quedem a Barcelona per a l'entrega en mà? Gràcies!`;
+                } else if (currentLang === 'en') {
+                    const qtyStr = free > 0
+                        ? `${totalTickets} tickets (${paid} paid + ${free} FREE via 6+1 promo)`
+                        : `${totalTickets} ticket${totalTickets > 1 ? 's' : ''}`;
+                    msg = `Hi Carlos! I would like to order tickets for the *Bye Bye Group* raffle (ONCE June 24) to support your 4th ESO graduation trip at Escola IPSE.\n\n` +
+                        `👤 *Name:* ${name}\n` +
+                        `🎟️ *Quantity:* ${qtyStr}\n` +
+                        `💶 *Total:* €${totalEuros}\n` +
+                        `💳 *Initial payment method:* ${paymentSelectedText} (I'll let you know here if I change my mind)\n\n` +
+                        `How can we meet in Barcelona province for hand delivery? Thanks!`;
+                } else {
+                    const qtyStr = free > 0
+                        ? `${totalTickets} tickets (${paid} pagados + ${free} GRATIS por promo 6+1)`
+                        : `${totalTickets} ticket${totalTickets > 1 ? 's' : ''}`;
+                    msg = `¡Hola Carlos! Quiero pedir tickets del sorteo *Bye Bye Group* (ONCE 24 de junio) para ayudar con vuestro viaje de fin de curso de 4º ESO de la Escola IPSE.\n\n` +
+                        `👤 *Nombre:* ${name}\n` +
+                        `🎟️ *Cantidad:* ${qtyStr}\n` +
+                        `💶 *Importe:* ${totalEuros} €\n` +
+                        `💳 *Método de pago inicial:* ${paymentSelectedText} (si cambio de opinión te aviso por aquí)\n\n` +
+                        `¿Cómo quedamos en Barcelona para la entrega en mano? ¡Gracias!`;
+                }
+
+                const url = `https://wa.me/${CONFIG_SORTEO.contacto.telefonoWhatsApp}?text=${encodeURIComponent(msg)}`;
+                window.open(url, '_blank', 'noopener,noreferrer');
+            });
+
+            // =========================================================
+            // 7. SISTEMA DE COMPARTIR
+            // =========================================================
+            const shareModal = document.getElementById('share-modal');
+            const closeShareModalBtn = document.getElementById('close-share-modal');
+            const shareWhatsAppDirect = document.getElementById('share-whatsapp-direct');
+            const btnCopyLink = document.getElementById('btn-copy-link');
+            const copyFeedback = document.getElementById('copy-feedback');
+            const shareTriggers = document.querySelectorAll('[data-open-share]');
+            const shareUrlInput = document.getElementById('share-url-input');
+            const shareUrlHint = document.getElementById('share-url-hint');
+
+            function detectPublicUrl() {
+                // 1. Si hay un enlace configurado manualmente en CONFIG_SORTEO o guardado por el usuario
+                const savedUrl = (localStorage.getItem('ipse_public_url') || CONFIG_SORTEO.urlOficial || '').trim();
+                if (savedUrl && /^https?:\/\//i.test(savedUrl)) {
+                    return savedUrl;
+                }
+                // 2. Si la página ya está alojada en un dominio web público real (Netlify, GitHub Pages, dominio propio...)
+                try {
+                    const loc = window.location;
+                    const isRealWebHost = (loc.protocol === 'http:' || loc.protocol === 'https:') &&
+                        loc.hostname &&
+                        !loc.hostname.includes('localhost') &&
+                        !loc.hostname.includes('127.0.0.1') &&
+                        !loc.hostname.includes('scf.usercontent.goog') &&
+                        !loc.hostname.includes('webcontainer');
+                    if (isRealWebHost) {
+                        return `${loc.origin}${loc.pathname}`;
+                    }
+                } catch (e) {}
+                return '';
+            }
+
+            function getShareUrl() {
+                const inputVal = shareUrlInput ? shareUrlInput.value.trim() : '';
+                if (inputVal && /^https?:\/\//i.test(inputVal)) {
+                    return inputVal;
+                }
+                return detectPublicUrl();
+            }
+
+            function getShareText() {
+                const url = getShareUrl();
+                if (currentLang === 'ca') {
+                    return `🎟️ Fes un cop d'ull al sorteig del viatge de fi de curs de 4t d'ESO de l'Escola IPSE de Barcelona! Per 3 € (i cada 6 tiquets, 1 GRATIS) entres al sorteig de l'ONCE del 24 de juny i si guanyes tries entre Creuer, Mac, iPhone, PS5 i més. Missatges WhatsApp Carlos: 672 89 08 54` + (url ? `\n👉 ${url}` : '');
+                } else if (currentLang === 'en') {
+                    return `🎟️ Check out the 4th ESO graduation trip raffle at Escola IPSE Barcelona! For €3 (plus 1 FREE ticket every 6), enter the June 24 ONCE draw and pick your prize (Cruise, Mac, iPhone, PS5 & more). WhatsApp messages Carlos: 672 89 08 54` + (url ? `\n👉 ${url}` : '');
+                }
+                return `🎟️ ¡Echa un vistazo al sorteo del viaje de fin de curso de 4º ESO de l'Escola IPSE de Barcelona! Por 3 € (y cada 6 tickets, 1 GRATIS) entras en el sorteo de la ONCE del 24 de junio y si ganas eliges entre Crucero, Mac, iPhone, PS5 y más. Mensajes WhatsApp Carlos: 672 89 08 54` + (url ? `\n👉 ${url}` : '');
+            }
+
+            function syncShareModalLinks() {
+                const currentUrl = getShareUrl();
+                shareWhatsAppDirect.href = `https://wa.me/?text=${encodeURIComponent(getShareText())}`;
+                if (currentUrl) {
+                    shareUrlHint.classList.add('hidden');
+                } else {
+                    shareUrlHint.classList.remove('hidden');
+                }
+            }
+
+            if (shareUrlInput) {
+                shareUrlInput.addEventListener('input', () => {
+                    const val = shareUrlInput.value.trim();
+                    if (/^https?:\/\//i.test(val)) {
+                        localStorage.setItem('ipse_public_url', val);
+                    } else if (!val) {
+                        localStorage.removeItem('ipse_public_url');
+                    }
+                    syncShareModalLinks();
+                });
+            }
+
+            function openShareModal() {
+                copyFeedback.classList.add('hidden');
+                const detected = detectPublicUrl();
+                if (shareUrlInput) {
+                    shareUrlInput.value = detected;
+                }
+                syncShareModalLinks();
+                shareModal.classList.remove('hidden');
+                shareModal.classList.add('flex');
+            }
+
+            function closeShareModal() {
+                shareModal.classList.add('hidden');
+                shareModal.classList.remove('flex');
+            }
+
+            shareTriggers.forEach(btn => {
+                btn.addEventListener('click', async () => {
+                    const url = getShareUrl();
+                    if (navigator.share && url) {
+                        try {
+                            await navigator.share({
+                                title: TRANSLATIONS[currentLang].headerTitle,
+                                text: getShareText(),
+                                url: url
+                            });
+                            return;
+                        } catch (err) {
+                            if (err && err.name === 'AbortError') return;
+                        }
+                    }
+                    openShareModal();
+                });
+            });
+
+            closeShareModalBtn.addEventListener('click', closeShareModal);
+            shareModal.addEventListener('click', (e) => {
+                if (e.target === shareModal) closeShareModal();
+            });
+
+            btnCopyLink.addEventListener('click', () => {
+                const textToCopy = getShareUrl() || getShareText();
+                const tempInput = document.createElement('textarea');
+                tempInput.value = textToCopy;
+                tempInput.style.position = 'fixed';
+                tempInput.style.opacity = '0';
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                tempInput.setSelectionRange(0, 99999);
+
+                try {
+                    document.execCommand('copy');
+                    copyFeedback.classList.remove('hidden');
+                } catch (e) {
+                    copyFeedback.classList.remove('hidden');
+                }
+                document.body.removeChild(tempInput);
+            });
+
+            // =========================================================
+            // 8. ASISTENTE VIRTUAL CON IA GENERATIVA REAL + RESPALDO HÍBRIDO
+            // =========================================================
+            const aiContainer = document.createElement('div');
+            aiContainer.id = 'ai-assistant-root';
+            aiContainer.className = 'fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end max-w-[calc(100vw-2rem)]';
+            aiContainer.innerHTML = `
+                <!-- Globo de aviso proactivo insistente -->
+                <div id="ai-nudge-bubble" class="hidden mb-3 max-w-xs sm:max-w-sm bg-white dark:bg-slate-900 border-2 border-amber-400 rounded-2xl p-3.5 shadow-xl text-xs sm:text-sm text-slate-800 dark:text-slate-100 relative cursor-pointer transition-all hover:scale-[1.01]">
+                    <button type="button" id="ai-nudge-close" aria-label="Cerrar aviso" class="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-slate-900 text-white text-xs font-bold flex items-center justify-center shadow">×</button>
+                    <p id="ai-nudge-text" class="font-semibold leading-snug pr-2"></p>
+                </div>
+
+                <!-- Ventana del Chat IA -->
+                <div id="ai-chat-window" class="hidden w-[345px] sm:w-[410px] max-w-full bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden flex flex-col mb-3">
+                    <!-- Cabecera -->
+                    <div class="bg-gradient-to-r from-slate-900 via-slate-800 to-amber-950 text-white px-4 py-3.5 flex items-center justify-between gap-2">
+                        <div class="flex items-center gap-2.5 min-w-0">
+                            <div class="w-9 h-9 rounded-2xl bg-amber-400 text-slate-950 font-display font-black text-sm flex items-center justify-center shrink-0 shadow">
+                                ✨
+                            </div>
+                            <div class="min-w-0">
+                                <div class="flex items-center gap-1.5">
+                                    <span id="ai-header-title" class="font-display font-extrabold text-sm truncate">Asistente Inteligente · IPSE</span>
+                                    <span id="ai-header-badge" class="px-1.5 py-0.5 rounded bg-amber-400 text-slate-950 text-[10px] font-black">IA</span>
+                                </div>
+                                <span id="ai-header-status" class="text-[11px] text-emerald-300 font-semibold flex items-center gap-1">
+                                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                                    <span>En línea · IA Conversacional</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-1.5 shrink-0">
+                            <button type="button" id="ai-settings-btn" title="Configurar clave API Gemini" aria-label="Configurar clave API" class="w-8 h-8 rounded-xl bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors">
+                                <i class="ph-bold ph-gear text-base"></i>
+                            </button>
+                            <button type="button" id="ai-close-btn" aria-label="Minimizar chat" class="w-8 h-8 rounded-xl bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors">
+                                <i class="ph-bold ph-caret-down text-base"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Panel discreto opcional para clave API en Netlify/GitHub Pages -->
+                    <div id="ai-settings-panel" class="hidden p-3 bg-amber-50 dark:bg-slate-800/95 border-b border-amber-200 dark:border-slate-700 text-xs space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span id="ai-settings-title" class="font-extrabold text-slate-900 dark:text-amber-300">Clave API Gemini (Opcional)</span>
+                            <button type="button" id="ai-settings-close" class="text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white font-bold">✕</button>
+                        </div>
+                        <p id="ai-settings-desc" class="text-[11px] text-slate-600 dark:text-slate-300 leading-snug">
+                            Si publicas la web en Netlify/GitHub Pages, pega aquí tu clave gratuita de Google AI Studio para activar la IA en la nube (se guarda solo en tu navegador).
+                        </p>
+                        <div class="flex items-center gap-1.5">
+                            <input type="password" id="ai-api-key-input" placeholder="AIzaSy..." class="flex-1 min-w-0 px-2.5 py-1.5 rounded-lg bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 text-slate-900 dark:text-white text-xs focus:outline-none focus:border-amber-400">
+                            <button type="button" id="ai-api-key-save" class="px-3 py-1.5 rounded-lg bg-slate-900 dark:bg-amber-400 text-white dark:text-slate-950 font-extrabold text-xs">Guardar</button>
+                        </div>
+                        <p id="ai-settings-feedback" class="hidden text-[11px] font-bold text-emerald-700 dark:text-emerald-400"></p>
+                    </div>
+
+                    <!-- Historial de mensajes -->
+                    <div id="ai-messages" class="p-3.5 space-y-3 max-h-[330px] sm:max-h-[360px] overflow-y-auto bg-slate-50/80 dark:bg-slate-950/60 text-xs sm:text-sm"></div>
+
+                    <!-- Chips dinámicos de sugerencias contextuales -->
+                    <div id="ai-chips" class="px-3 py-2 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 flex items-center gap-1.5 overflow-x-auto no-scrollbar"></div>
+
+                    <!-- Caja de texto -->
+                    <form id="ai-form" class="p-2.5 bg-white dark:bg-slate-900 border-t border-slate-200/80 dark:border-slate-800 flex items-center gap-2">
+                        <input type="text" id="ai-input" autocomplete="off" placeholder="Pregunta lo que quieras, compara premios o pon tu presupuesto..." class="flex-1 min-w-0 px-3.5 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-amber-400">
+                        <button type="submit" id="ai-send-btn" class="px-3.5 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-extrabold text-xs sm:text-sm transition-colors shrink-0 flex items-center gap-1">
+                            <i class="ph-bold ph-paper-plane-right text-base"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Botón flotante principal -->
+                <button type="button" id="ai-launcher-btn" aria-label="Abrir asistente virtual" class="group flex items-center gap-2.5 px-4 py-3 rounded-full bg-slate-900 dark:bg-amber-400 hover:bg-slate-800 dark:hover:bg-amber-300 text-white dark:text-slate-950 font-display font-extrabold text-xs sm:text-sm shadow-xl border-2 border-amber-400 dark:border-slate-900 transition-transform hover:scale-105">
+                    <span class="relative flex h-3 w-3">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                    </span>
+                    <span id="ai-launcher-label">Asistente Sorteo</span>
+                    <i class="ph-fill ph-sparkle text-base text-amber-300 dark:text-slate-950"></i>
+                </button>
+            `;
+            document.body.appendChild(aiContainer);
+
+            const aiChatWindow = document.getElementById('ai-chat-window');
+            const aiLauncherBtn = document.getElementById('ai-launcher-btn');
+            const aiCloseBtn = document.getElementById('ai-close-btn');
+            const aiMessages = document.getElementById('ai-messages');
+            const aiChips = document.getElementById('ai-chips');
+            const aiForm = document.getElementById('ai-form');
+            const aiInput = document.getElementById('ai-input');
+            const aiSendBtn = document.getElementById('ai-send-btn');
+            const aiNudgeBubble = document.getElementById('ai-nudge-bubble');
+            const aiNudgeText = document.getElementById('ai-nudge-text');
+            const aiNudgeClose = document.getElementById('ai-nudge-close');
+            const aiSettingsBtn = document.getElementById('ai-settings-btn');
+            const aiSettingsPanel = document.getElementById('ai-settings-panel');
+            const aiSettingsClose = document.getElementById('ai-settings-close');
+            const aiApiKeyInput = document.getElementById('ai-api-key-input');
+            const aiApiKeySave = document.getElementById('ai-api-key-save');
+            const aiSettingsFeedback = document.getElementById('ai-settings-feedback');
+
+            let aiIsOpen = false;
+            let aiHasOpenedOnce = false;
+            let aiIsBusy = false;
+            let nudgeCount = 0;
+
+            // Historial multi-turno para Gemini API
+            let geminiChatHistory = [];
+
+            // Memoria persistente de la conversación (compartida con respaldo local)
+            const aiMemory = {
+                preferredPrize: null,
+                recommendedPaidQty: 6,
+                turnCount: 0,
+                mentionedBudget: null,
+                mentionedGroup: false,
+                usedOpeners: new Set()
+            };
+
+            // Cargar clave opcional guardada por el administrador en localStorage
+            const savedCustomApiKey = localStorage.getItem('ipse_gemini_api_key') || '';
+            if (savedCustomApiKey) {
+                aiApiKeyInput.value = savedCustomApiKey;
+            }
+
+            aiSettingsBtn.addEventListener('click', () => {
+                aiSettingsPanel.classList.toggle('hidden');
+            });
+            aiSettingsClose.addEventListener('click', () => {
+                aiSettingsPanel.classList.add('hidden');
+            });
+            aiApiKeySave.addEventListener('click', () => {
+                const keyVal = aiApiKeyInput.value.trim();
+                if (keyVal) {
+                    localStorage.setItem('ipse_gemini_api_key', keyVal);
+                    aiSettingsFeedback.textContent = currentLang === 'ca' ? 'Clau desada! IA al núvol activada.' : currentLang === 'en' ? 'Key saved! Cloud AI enabled.' : '¡Clave guardada! IA en la nube activada.';
+                } else {
+                    localStorage.removeItem('ipse_gemini_api_key');
+                    aiSettingsFeedback.textContent = currentLang === 'ca' ? 'Clau esborrada. Mode automàtic actiu.' : currentLang === 'en' ? 'Key cleared. Auto mode active.' : 'Clave borrada. Modo automático activo.';
+                }
+                aiSettingsFeedback.classList.remove('hidden');
+                setTimeout(() => aiSettingsFeedback.classList.add('hidden'), 3000);
+            });
+
+            function buildWhatsAppOrderUrl(paidCount) {
+                const { paid, free, totalTickets, totalEuros } = computeOrder(paidCount);
+                const dict = AI_ENGINE_DATA[currentLang];
+                const text = dict.waCustomText(totalTickets, paid, free, totalEuros, aiMemory.preferredPrize);
+                return `https://wa.me/${CONFIG_SORTEO.contacto.telefonoWhatsApp}?text=${encodeURIComponent(text)}`;
+            }
+
+            function appendUserMessage(text) {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'flex justify-end';
+                const bubble = document.createElement('div');
+                bubble.className = 'max-w-[84%] px-3.5 py-2.5 rounded-2xl rounded-br-sm bg-slate-900 dark:bg-amber-400 text-white dark:text-slate-950 font-semibold shadow-sm';
+                bubble.textContent = text;
+                wrapper.appendChild(bubble);
+                aiMessages.appendChild(wrapper);
+                aiMessages.scrollTop = aiMessages.scrollHeight;
+            }
+
+            function showThinkingIndicator() {
+                const dict = AI_ENGINE_DATA[currentLang];
+                const wrapper = document.createElement('div');
+                wrapper.id = 'ai-thinking-bubble';
+                wrapper.className = 'flex items-center gap-2 px-3.5 py-2.5 rounded-2xl rounded-bl-sm bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-300 text-xs font-medium w-fit shadow-sm';
+                wrapper.innerHTML = `
+                    <span class="flex items-center gap-1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-amber-500 thinking-dot"></span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-amber-500 thinking-dot"></span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-amber-500 thinking-dot"></span>
+                    </span>
+                    <span>${dict.thinking}</span>
+                `;
+                aiMessages.appendChild(wrapper);
+                aiMessages.scrollTop = aiMessages.scrollHeight;
+                return wrapper;
+            }
+
+            // Formatea respuesta de texto plano/markdown ligero de Gemini a HTML seguro y limpio
+            function formatAiResponseToHtml(rawText) {
+                const escaped = rawText
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;');
+                const withBold = escaped.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+                const withItalic = withBold.replace(/\*(.+?)\*/g, '<em>$1</em>');
+                const paragraphs = withItalic
+                    .split(/\n{2,}/)
+                    .map(p => p.trim())
+                    .filter(Boolean)
+                    .map(p => `<p>${p.replace(/\n/g, '<br>')}</p>`);
+                return paragraphs.join('');
+            }
+
+            // Extrae cantidad de tickets sugerida de la conversación para actualizar el botón directo
+            function detectRecommendedQuantityFromText(userText, replyText) {
+                const combined = `${userText} ${replyText}`.toLowerCase();
+
+                // Detectar premios favoritos
+                const prizeMap = [
+                    { keys: ['crucero', 'creuer', 'cruise', 'barco', 'vaixell'], label: currentLang === 'ca' ? 'Creuer per a 2' : currentLang === 'en' ? 'Cruise for 2' : 'Crucero para 2' },
+                    { keys: ['mac', 'apple', 'portatil', 'ordenador', 'ordinador', 'laptop'], label: 'PC Mac' },
+                    { keys: ['iphone'], label: 'iPhone' },
+                    { keys: ['samsung', 'galaxy', 'movil', 'mobil'], label: 'Samsung' },
+                    { keys: ['ipad', 'tablet'], label: 'iPad' },
+                    { keys: ['ps5', 'playstation', 'play'], label: 'PlayStation' },
+                    { keys: ['xbox'], label: 'Xbox' },
+                    { keys: ['tv', 'tele', 'smart tv'], label: 'Smart TV' }
+                ];
+                for (const p of prizeMap) {
+                    if (p.keys.some(k => combined.includes(k))) {
+                        aiMemory.preferredPrize = p.label;
+                        break;
+                    }
+                }
+
+                // Detectar patrón "X tickets pagados" o "X boletos"
+                const paidMatch = combined.match(/(\d{1,3})\s*(?:tickets?\s*pagados|tiquets?\s*pagats|paid\s*tickets?|boletos?\s*pagados)/);
+                if (paidMatch) {
+                    const q = Math.max(1, Math.min(200, parseInt(paidMatch[1], 10)));
+                    aiMemory.recommendedPaidQty = q;
+                    aiMemory.mentionedBudget = q * 3;
+                    updateOrderUI(q);
+                    return q;
+                }
+
+                // Detectar mención explícita de cantidad en la pregunta del usuario
+                const userClean = userText.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+                const groupMatch = userClean.match(/(?:somos|som|we are|entre)\s+(\d{1,2})\s*(?:amigos|amics|friends|personas|persones|people)?/);
+                const perPersonEuroMatch = userClean.match(/(\d{1,3})\s*(?:€|euros?|eur)\s*(?:cada|cadascu|each|por persona|per persona)/);
+                if (groupMatch && perPersonEuroMatch) {
+                    const totalPool = parseInt(groupMatch[1], 10) * parseInt(perPersonEuroMatch[1], 10);
+                    const q = Math.max(1, Math.min(200, Math.floor(totalPool / 3)));
+                    aiMemory.recommendedPaidQty = q;
+                    aiMemory.mentionedBudget = totalPool;
+                    aiMemory.mentionedGroup = true;
+                    updateOrderUI(q);
+                    return q;
+                }
+
+                const euroBudgetMatch = userClean.match(/(\d{1,4})\s*(?:€|euros?|eur)\b/);
+                if (euroBudgetMatch) {
+                    const budget = parseInt(euroBudgetMatch[1], 10);
+                    if (budget >= 3) {
+                        const q = Math.max(1, Math.min(200, Math.floor(budget / 3)));
+                        aiMemory.recommendedPaidQty = q;
+                        aiMemory.mentionedBudget = budget;
+                        updateOrderUI(q);
+                        return q;
+                    }
+                }
+
+                const plainNumMatch = userClean.match(/\b(\d{1,3})\b/);
+                if (plainNumMatch) {
+                    const num = parseInt(plainNumMatch[1], 10);
+                    const isMetadataNum = (num === 24 && userClean.includes('jun')) || (num === 4 && userClean.includes('eso')) || num === 5 || num === 8 || num === 7;
+                    if (!isMetadataNum && num >= 1 && num <= 200) {
+                        aiMemory.recommendedPaidQty = num;
+                        updateOrderUI(num);
+                        return num;
+                    }
+                }
+
+                return aiMemory.recommendedPaidQty;
+            }
+
+            function appendBotMessage(htmlContent, paidPack = aiMemory.recommendedPaidQty) {
+                const dict = AI_ENGINE_DATA[currentLang];
+                const { paid, free, totalTickets, totalEuros } = computeOrder(paidPack);
+                const btnLabel = paidPack === 6 && !aiMemory.mentionedBudget && !aiMemory.mentionedGroup
+                    ? dict.btnReserveDefault
+                    : dict.btnReserveCustom(totalTickets, paid, free, totalEuros);
+
+                const wrapper = document.createElement('div');
+                wrapper.className = 'flex flex-col items-start gap-2';
+
+                const bubble = document.createElement('div');
+                bubble.className = 'max-w-[94%] px-3.5 py-3 rounded-2xl rounded-bl-sm bg-white dark:bg-slate-800 border border-slate-200/90 dark:border-slate-700 text-slate-800 dark:text-slate-100 leading-relaxed shadow-sm space-y-2';
+                bubble.innerHTML = htmlContent;
+
+                const ctaLink = document.createElement('a');
+                ctaLink.href = buildWhatsAppOrderUrl(paidPack);
+                ctaLink.target = '_blank';
+                ctaLink.rel = 'noopener noreferrer';
+                ctaLink.className = 'inline-flex items-center gap-2 px-3.5 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-slate-950 font-extrabold text-xs shadow-sm transition-transform hover:scale-[1.02]';
+                ctaLink.innerHTML = `<i class="ph-fill ph-whatsapp-logo text-base"></i><span>${btnLabel}</span>`;
+
+                wrapper.appendChild(bubble);
+                wrapper.appendChild(ctaLink);
+                aiMessages.appendChild(wrapper);
+                aiMessages.scrollTop = aiMessages.scrollHeight;
+            }
+
+            // =========================================================
+            // MOTOR 1: LLAMADA REAL A GEMINI API (MULTI-TURNO + SYSTEM PROMPT)
+            // =========================================================
+            function buildSystemInstruction() {
+                return `Eres el asistente virtual oficial, carismático, esperanzador y muy persuasivo de la rifa del viaje de fin de curso de 4º de ESO de l'Escola IPSE (Barcelona).
+
+DATOS REALES E INAMOVIBLES DEL SORTEO (NUNCA INVENTES OTROS):
+- Equipo organizador: Carlos, Ángel, Albert, Walter y Claudio (alumnos de 4º de ESO de l'Escola IPSE de Barcelona). Siempre que menciones al equipo, nombra a los cinco: Carlos, Ángel, Albert, Walter y Claudio.
+- Contacto y pedidos por WhatsApp: EXCLUSIVAMENTE con Carlos (teléfono 672 89 08 54, solo mensajes escritos, no llamadas). Nunca des teléfonos de otros compañeros.
+- Entidad organizadora impresa en las papeletas: Bye Bye Group (carácter no lucrativo para financiar el viaje de fin de curso).
+- Fecha y mecanismo del sorteo: Vinculado al sorteo oficial de la ONCE del 24 de junio de 2027. Gana la papeleta cuyas 5 cifras coincidan exactamente con el número premiado. El ganador tiene 7 días naturales tras el sorteo para reclamarlo escribiendo a info@byebyegroup.com.
+- Precio y promoción estrella: 3 € por ticket. PROMOCIÓN ACUMULABLE: Por cada 6 tickets pagados, se regala 1 ticket GRATIS (ej. pagas 6 = 18 € y recibes 7 tickets; pagas 12 = 36 € y recibes 14 tickets).
+- Los 8 premios disponibles (el ganador elige UNO libremente): 1) Crucero para 2 personas, 2) PC Mac, 3) Smart TV, 4) iPad, 5) iPhone, 6) Samsung, 7) PlayStation (PS5), 8) Xbox. Los premios no son canjeables por dinero en efectivo ni transferibles.
+- Entrega y pagos: Entrega física en mano exclusivamente en la provincia de Barcelona (quedando por mensaje de WhatsApp donde mejor le venga al comprador). Pagos por Bizum, Transferencia Bancaria o Efectivo al entregar (modificable por WhatsApp antes de la entrega).
+
+TU PERSONALIDAD Y FORMA DE RESPONDER:
+1. Responde SIEMPRE en el idioma en que te escriba el usuario (Español, Català o English; si no es obvio, usa el idioma activo de la web: ${currentLang}).
+2. Razona con inteligencia y naturalidad sobre CUALQUIER pregunta abierta, broma, ironía, comparativa técnica entre premios (ej. PC Mac vs PS5 vs Crucero para 2), cálculo matemático de presupuestos en euros o división entre grupos de amigos.
+3. Mantén un tono luminoso, cálido, esperanzador y entusiasta, pero sé claramente persuasivo e insistente para cerrar la venta: recuerda la oferta 6+1 GRATIS, crea urgencia positiva (quedan pocos números, el 24 de junio llega rápido) y termina siempre animando a pulsar el botón verde de abajo para reservar ya con Carlos por WhatsApp.
+4. Respuestas concisas, bien estructuradas en 2 o 3 párrafos cortos con emojis bien elegidos (máximo 120-150 palabras) para que se lean genial en móvil.`;
+            }
+
+            async function callGeminiWithRetry(userMessage) {
+                const apiKey = localStorage.getItem('ipse_gemini_api_key') || "";
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
+
+                const nextHistory = [
+                    ...geminiChatHistory,
+                    { role: 'user', parts: [{ text: userMessage }] }
+                ];
+
+                const payload = {
+                    contents: nextHistory,
+                    systemInstruction: {
+                        parts: [{ text: buildSystemInstruction() }]
+                    },
+                    generationConfig: {
+                        temperature: 0.85,
+                        maxOutputTokens: 450
+                    }
+                };
+
+                const delays = [1000, 2000, 4000];
+                for (let attempt = 0; attempt <= delays.length; attempt++) {
+                    try {
+                        const response = await fetch(apiUrl, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(payload)
+                        });
+                        if (!response.ok) {
+                            throw new Error(`HTTP ${response.status}`);
+                        }
+                        const result = await response.json();
+                        const candidateText = result?.candidates?.[0]?.content?.parts?.[0]?.text;
+                        if (candidateText && candidateText.trim()) {
+                            geminiChatHistory = [
+                                ...nextHistory,
+                                { role: 'model', parts: [{ text: candidateText.trim() }] }
+                            ];
+                            return candidateText.trim();
+                        }
+                        throw new Error('Empty response');
+                    } catch (err) {
+                        if (attempt < delays.length) {
+                            await new Promise(res => setTimeout(res, delays[attempt]));
+                        } else {
+                            throw err;
+                        }
+                    }
+                }
+            }
+
+            // =========================================================
+            // MOTOR 2: RESPALDO LOCAL AVANZADO (SIN DEPENDENCIA EXTERNA)
+            // =========================================================
+            function localFallbackReasonAndReply(rawText) {
+                aiMemory.turnCount++;
+                const clean = rawText.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+                const sections = [];
+
+                // Comparativas inteligentes entre premios
+                const mentionsMac = clean.includes('mac') || clean.includes('portatil') || clean.includes('ordenador');
+                const mentionsPs5 = clean.includes('ps5') || clean.includes('playstation') || clean.includes('xbox') || clean.includes('consola');
+                const mentionsCruise = clean.includes('crucero') || clean.includes('creuer') || clean.includes('cruise') || clean.includes('viaje');
+                const mentionsPhone = clean.includes('iphone') || clean.includes('samsung') || clean.includes('movil');
+
+                const prizeCount = [mentionsMac, mentionsPs5, mentionsCruise, mentionsPhone].filter(Boolean).length;
+                if (prizeCount >= 2 || clean.includes('cual me recomiendas') || clean.includes('que premio') || clean.includes('compar') || clean.includes('mejor premio')) {
+                    if (currentLang === 'ca') {
+                        sections.push(`⚖️ <strong>Comparativa ràpida:</strong> Si busques una experiència inoblidable aquest estiu, el <strong>Creuer per a 2</strong> és imbatible; si vols productivitat i valor a llarg termini, el <strong>PC Mac</strong> o l'<strong>iPhone</strong> són una joia; i per a oci pur a casa, la <strong>PlayStation</strong> o <strong>Smart TV</strong> triomfen. El millor? No has de triar fins que guanyis el <strong>24 de juny</strong>!`);
+                    } else if (currentLang === 'en') {
+                        sections.push(`⚖️ <strong>Quick comparison:</strong> For an unforgettable summer memory, the <strong>Cruise for 2</strong> wins hands down; for daily work/study power, the <strong>Mac PC</strong> or <strong>iPhone</strong> has huge value; and for pure home fun, <strong>PlayStation</strong> or <strong>Smart TV</strong> is unbeatable. Best part? You only decide once you win on <strong>June 24</strong>!`);
+                    } else {
+                        sections.push(`⚖️ <strong>Comparativa rápida:</strong> Si buscas un recuerdo inolvidable este verano, el <strong>Crucero para 2</strong> es imbatible; si quieres potencia para estudiar o trabajar, el <strong>PC Mac</strong> o el <strong>iPhone</strong> son oro puro; y para disfrutar en casa, la <strong>PlayStation</strong> o la <strong>Smart TV</strong> arrasan. ¡Lo mejor es que no tienes que decidirlo hasta que ganes el <strong>24 de junio</strong>!`);
+                    }
+                }
+
+                // Matemáticas de grupos y presupuestos
+                const groupMatch = clean.match(/(?:somos|som|we are|entre)\s+(\d{1,2})\s*(?:amigos|amics|friends|personas|persones|people)?/);
+                const perPersonEuroMatch = clean.match(/(\d{1,3})\s*(?:€|euros?|eur)\s*(?:cada|cadascu|each|por persona|per persona)/);
+
+                if (groupMatch && perPersonEuroMatch) {
+                    const people = parseInt(groupMatch[1], 10);
+                    const eachEuro = parseInt(perPersonEuroMatch[1], 10);
+                    const totalPool = people * eachEuro;
+                    const affordablePaid = Math.max(1, Math.floor(totalPool / 3));
+                    const leftover = totalPool - (affordablePaid * 3);
+                    const { paid, free, totalTickets, totalEuros } = computeOrder(affordablePaid);
+                    aiMemory.recommendedPaidQty = paid;
+                    aiMemory.mentionedBudget = totalPool;
+                    aiMemory.mentionedGroup = true;
+                    updateOrderUI(paid);
+
+                    const nextPromoPaid = (Math.floor(paid / 6) + 1) * 6;
+                    const missingForBonus = nextPromoPaid - paid;
+
+                    if (currentLang === 'ca') {
+                        let txt = `👥 <strong>Grup de ${people} amics (${totalPool} € junts):</strong> Aconseguiu <strong>${paid} tiquets pagats (${totalEuros} €)</strong>` + (free > 0 ? ` + <strong>${free} GRATIS</strong> = <strong>${totalTickets} butlletes</strong>!` : `.`) + (leftover > 0 ? ` (Sobren ${leftover} €).` : '');
+                        if (missingForBonus === 1) txt += `<br>🔥 <strong>Truc:</strong> Poseu només <strong>${3 - leftover} € més entre tots</strong> i us emporteu <strong>1 EXTRA GRATIS</strong>!`;
+                        sections.push(txt);
+                    } else if (currentLang === 'en') {
+                        let txt = `👥 <strong>Group of ${people} (€${totalPool} total):</strong> You get <strong>${paid} paid tickets (€${totalEuros})</strong>` + (free > 0 ? ` + <strong>${free} FREE</strong> = <strong>${totalTickets} tickets</strong>!` : `.`) + (leftover > 0 ? ` (€${leftover} left).` : '');
+                        if (missingForBonus === 1) txt += `<br>🔥 <strong>Pro tip:</strong> Add just <strong>€${3 - leftover} more combined</strong> to unlock <strong>1 EXTRA FREE</strong>!`;
+                        sections.push(txt);
+                    } else {
+                        let txt = `👥 <strong>Grupo de ${people} amigos (${totalPool} € juntos):</strong> Os lleváis <strong>${paid} tickets pagados (${totalEuros} €)</strong>` + (free > 0 ? ` + <strong>${free} GRATIS</strong> = <strong>${totalTickets} papeletas</strong>!` : `.`) + (leftover > 0 ? ` (Sobran ${leftover} €).` : '');
+                        if (missingForBonus === 1) txt += `<br>🔥 <strong>Truco clave:</strong> Poned solo <strong>${3 - leftover} € más entre todos</strong> y os lleváis <strong>1 EXTRA GRATIS</strong>!`;
+                        sections.push(txt);
+                    }
+                } else {
+                    const euroBudgetMatch = clean.match(/(\d{1,4})\s*(?:€|euros?|eur)\b/);
+                    const plainNumMatch = clean.match(/\b(\d{1,3})\b/);
+
+                    if (euroBudgetMatch) {
+                        const budget = parseInt(euroBudgetMatch[1], 10);
+                        if (budget >= 3) {
+                            const affordablePaid = Math.min(200, Math.floor(budget / 3));
+                            const change = budget - (affordablePaid * 3);
+                            const { paid, free, totalTickets, totalEuros } = computeOrder(affordablePaid);
+                            aiMemory.recommendedPaidQty = paid;
+                            aiMemory.mentionedBudget = budget;
+                            updateOrderUI(paid);
+
+                            if (currentLang === 'ca') {
+                                sections.push(`💶 <strong>Amb ${budget} €:</strong> Tens <strong>${paid} tiquets (${totalEuros} €)</strong>` + (free > 0 ? ` + <strong>${free} GRATIS</strong> (<strong>${totalTickets} oportunitats</strong>!).` : `.`) + (change > 0 ? ` Et sobren ${change} €.` : ''));
+                            } else if (currentLang === 'en') {
+                                sections.push(`💶 <strong>With €${budget}:</strong> You get <strong>${paid} tickets (€${totalEuros})</strong>` + (free > 0 ? ` + <strong>${free} FREE</strong> (<strong>${totalTickets} chances</strong>!).` : `.`) + (change > 0 ? ` €${change} change.` : ''));
+                            } else {
+                                sections.push(`💶 <strong>Con ${budget} €:</strong> Consigues <strong>${paid} tickets (${totalEuros} €)</strong>` + (free > 0 ? ` + <strong>${free} GRATIS</strong> (<strong>${totalTickets} oportunidades</strong>!).` : `.`) + (change > 0 ? ` Te sobran ${change} €.` : ''));
+                            }
+                        }
+                    } else if (plainNumMatch) {
+                        const qty = Math.max(1, Math.min(200, parseInt(plainNumMatch[1], 10)));
+                        const isMeta = (qty === 24 && clean.includes('jun')) || (qty === 4 && clean.includes('eso'));
+                        if (!isMeta) {
+                            const { paid, free, totalTickets, totalEuros } = computeOrder(qty);
+                            aiMemory.recommendedPaidQty = paid;
+                            updateOrderUI(paid);
+                            const rem = CONFIG_SORTEO.promoCada - (paid % CONFIG_SORTEO.promoCada);
+                            if (currentLang === 'ca') {
+                                sections.push(free > 0 ? `🎟️ <strong>${paid} tiquets (${totalEuros} €) + ${free} GRATIS = ${totalTickets} butlletes!</strong>` : `🎟️ <strong>${paid} tiquet${paid > 1 ? 's' : ''} = ${totalEuros} €.</strong>` + (rem === 1 ? ` 🔥 <em>Afegeix-ne 1 més i t'emportes un altre GRATIS!</em>` : ` Recorda: cada 6 tiquets, 1 gratis.`));
+                            } else if (currentLang === 'en') {
+                                sections.push(free > 0 ? `🎟️ <strong>${paid} tickets (€${totalEuros}) + ${free} FREE = ${totalTickets} tickets!</strong>` : `🎟️ <strong>${paid} ticket${paid > 1 ? 's' : ''} = €${totalEuros}.</strong>` + (rem === 1 ? ` 🔥 <em>Add 1 more to get another FREE!</em>` : ` Remember: every 6 tickets gets 1 free.`));
+                            } else {
+                                sections.push(free > 0 ? `🎟️ <strong>${paid} tickets (${totalEuros} €) + ${free} GRATIS = ${totalTickets} papeletas!</strong>` : `🎟️ <strong>${paid} ticket${paid > 1 ? 's' : ''} = ${totalEuros} €.</strong>` + (rem === 1 ? ` 🔥 <em>¡Añade solo 1 más y te llevas otro GRATIS!</em>` : ` Recuerda: cada 6 tickets llevas 1 gratis.`));
+                            }
+                        }
+                    }
+                }
+
+                if (clean.includes('fuera') || clean.includes('fora') || clean.includes('outside') || clean.includes('barcelona') || clean.includes('envio')) {
+                    sections.push(currentLang === 'ca'
+                        ? `📍 <strong>Entrega en mà a Barcelona:</strong> En <strong>Carlos, l'Ángel, l'Albert, en Walter o en Claudio</strong> t'ho portem en persona a tota la província de Barcelona (o a un familiar/amic teu si vius fora).`
+                        : currentLang === 'en'
+                        ? `📍 <strong>Hand delivery in Barcelona:</strong> <strong>Carlos, Ángel, Albert, Walter, or Claudio</strong> deliver personally across Barcelona province (or to a friend/relative here if you live elsewhere).`
+                        : `📍 <strong>Entrega en mano en Barcelona:</strong> <strong>Carlos, Ángel, Albert, Walter o Claudio</strong> te lo llevamos en persona en toda la provincia de Barcelona (o a un amigo/familiar tuyo si vives fuera).`);
+                }
+
+                if (clean.includes('estafa') || clean.includes('fiar') || clean.includes('real') || clean.includes('ipse') || clean.includes('legit')) {
+                    sections.push(currentLang === 'ca'
+                        ? `🛡️ <strong>100% real:</strong> Som en <strong>Carlos, l'Ángel, l'Albert, en Walter i en Claudio</strong> de <strong>4t d'ESO de l'Escola IPSE</strong>. Quedem en persona, veus la butlleta física de <em>Bye Bye Group</em> (ONCE 24 de juny) i pots pagar en efectiu o Bizum al moment.`
+                        : currentLang === 'en'
+                        ? `🛡️ <strong>100% legit:</strong> We are <strong>Carlos, Ángel, Albert, Walter, and Claudio</strong> from <strong>4th ESO at Escola IPSE</strong>. We meet in person, hand you the official <em>Bye Bye Group</em> ticket (June 24 ONCE), and you can pay cash or Bizum on the spot.`
+                        : `🛡️ <strong>100% real:</strong> Somos <strong>Carlos, Ángel, Albert, Walter y Claudio</strong> de <strong>4º de ESO de l'Escola IPSE</strong>. Quedamos en persona, ves tu papeleta física de <em>Bye Bye Group</em> (ONCE 24 de junio) y puedes pagar en efectivo o Bizum al momento.`);
+                }
+
+                if (sections.length === 0) {
+                    const openers = currentLang === 'ca'
+                        ? [
+                            `☀️ <strong>Bona observació!</strong> Mira amb esperança al <strong>24 de juny</strong>: per només <strong>3 €</strong> ajudes a en <strong>Carlos, l'Ángel, l'Albert, en Walter i en Claudio</strong> (4t d'ESO Escola IPSE) i pots triar entre 8 premis espectaculars (Creuer, Mac, iPhone, PS5...).`,
+                            `✨ <strong>T'explico ràpid:</strong> El sorteig va lligat al cupó oficial de l'<strong>ONCE del 24 de juny</strong>. Si encertes les 5 xifres, tu esculls el premi que vulguis mentre impulsas el nostre viatge de 4t d'ESO de l'<strong>Escola IPSE</strong>!`
+                        ]
+                        : currentLang === 'en'
+                        ? [
+                            `☀️ <strong>Great point!</strong> Look forward with hope to <strong>June 24</strong>: for just <strong>€3</strong> you support <strong>Carlos, Ángel, Albert, Walter, and Claudio</strong> (4th ESO Escola IPSE) and can pick from 8 top prizes (Cruise, Mac, iPhone, PS5...).`,
+                            `✨ <strong>Here's the deal:</strong> The raffle is tied to the official <strong>June 24 ONCE draw</strong>. Match the 5 digits and choose your dream prize while backing our <strong>Escola IPSE</strong> graduation trip!`
+                        ]
+                        : [
+                            `☀️ <strong>¡Buena observación!</strong> Mira con esperanza al <strong>24 de junio</strong>: por solo <strong>3 €</strong> impulsas el viaje de <strong>Carlos, Ángel, Albert, Walter y Claudio</strong> (4º ESO Escola IPSE) y puedes elegir entre 8 premios increíbles (Crucero, Mac, iPhone, PS5...).`,
+                            `✨ <strong>Te cuento rápido:</strong> El sorteo va ligado al cupón oficial de la <strong>ONCE del 24 de junio</strong>. Si aciertas las 5 cifras, eliges el premio que prefieras mientras nos ayudas en 4º de ESO de l'<strong>Escola IPSE</strong>!`
+                        ];
+                    sections.push(openers[aiMemory.turnCount % openers.length]);
+                }
+
+                const closing = currentLang === 'ca'
+                    ? `🎁 <strong>Aprofita el 6+1 GRATIS:</strong> Cada 6 tiquets en tens 1 de regal. Prem el botó verd i reserva els teus amb en <strong>Carlos</strong> abans que volin!`
+                    : currentLang === 'en'
+                    ? `🎁 <strong>Grab the 6+1 FREE deal:</strong> Every 6 tickets gets 1 bonus ticket. Tap the green button below and lock yours in with <strong>Carlos</strong> before they sell out!`
+                    : `🎁 <strong>¡Aprovecha el 6+1 GRATIS:</strong> Cada 6 tickets llevas 1 de regalo. ¡Pulsa el botón verde de abajo y resérvalos ya con <strong>Carlos</strong> antes de que vuelen!`;
+                sections.push(closing);
+
+                return sections.map(s => `<p>${s}</p>`).join('');
+            }
+
+            // Chips dinámicos que evolucionan según la conversación
+            function updateDynamicChips(lastUserText = '') {
+                const lower = lastUserText.toLowerCase();
+                let dynamicList;
+
+                if (lower.includes('mac') || lower.includes('ps5') || lower.includes('crucero') || lower.includes('premio')) {
+                    dynamicList = currentLang === 'ca'
+                        ? [
+                            { query: "Quin val més la pena: PC Mac, PS5 o el Creuer per a 2?", label: "⚖️ Mac vs PS5 vs Creuer" },
+                            { query: "Vull el pack de 6 + 1 GRATIS per 18 euros", label: "🎁 Agafar Pack 6+1 (18 €)" },
+                            { query: "Com s'entrega el premi si guanyo?", label: "🏆 Com es reclama?" }
+                        ]
+                        : currentLang === 'en'
+                        ? [
+                            { query: "Which is better value: Mac PC, PS5 or the Cruise for 2?", label: "⚖️ Mac vs PS5 vs Cruise" },
+                            { query: "I want the 6 + 1 FREE pack for 18 euros", label: "🎁 Grab 6+1 Pack (€18)" },
+                            { query: "How is the prize delivered if I win?", label: "🏆 How to claim?" }
+                        ]
+                        : [
+                            { query: "¿Qué merece más la pena: PC Mac, PS5 o el Crucero para 2?", label: "⚖️ Mac vs PS5 vs Crucero" },
+                            { query: "Quiero el pack de 6 + 1 GRATIS por 18 euros", label: "🎁 Coger Pack 6+1 (18 €)" },
+                            { query: "¿Cómo se reclama el premio si me toca?", label: "🏆 ¿Cómo se reclama?" }
+                        ];
+                } else if (lower.includes('amigo') || lower.includes('euro') || lower.includes('€') || lower.includes('precio')) {
+                    dynamicList = currentLang === 'ca'
+                        ? [
+                            { query: "I si agafem 12 tiquets entre tots, quants en regaleu?", label: "🔥 Pack 12+2 GRATIS" },
+                            { query: "Podem pagar per Bizum i quedar a Barcelona?", label: "💳 Bizum i entrega" },
+                            { query: "Com sé que és oficial de l'Escola IPSE?", label: "🛡️ Garantia IPSE" }
+                        ]
+                        : currentLang === 'en'
+                        ? [
+                            { query: "What if we get 12 tickets together, how many free?", label: "🔥 12+2 FREE Pack" },
+                            { query: "Can we pay via Bizum and meet in Barcelona?", label: "💳 Bizum & delivery" },
+                            { query: "How do I know it's official from Escola IPSE?", label: "🛡️ IPSE Guarantee" }
+                        ]
+                        : [
+                            { query: "¿Y si cogemos 12 tickets entre todos, cuántos regaláis?", label: "🔥 Pack 12+2 GRATIS" },
+                            { query: "¿Podemos pagar por Bizum y quedar en Barcelona?", label: "💳 Bizum y entrega" },
+                            { query: "¿Cómo sé que es oficial de l'Escola IPSE?", label: "🛡️ Garantía IPSE" }
+                        ];
+                } else {
+                    dynamicList = AI_ENGINE_DATA[currentLang].chips;
+                }
+
+                aiChips.innerHTML = '';
+                dynamicList.forEach(chip => {
+                    const btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = 'px-2.5 py-1.5 rounded-full bg-amber-50 dark:bg-slate-800 hover:bg-amber-100 dark:hover:bg-slate-700 border border-amber-200/80 dark:border-slate-700 text-slate-800 dark:text-slate-200 font-bold text-[11px] whitespace-nowrap shrink-0 transition-colors';
+                    btn.textContent = chip.label;
+                    btn.addEventListener('click', () => {
+                        if (!aiIsBusy) handleUserInput(chip.query);
+                    });
+                    aiChips.appendChild(btn);
+                });
+            }
+
+            async function handleUserInput(text) {
+                if (aiIsBusy) return;
+                aiIsBusy = true;
+                aiSendBtn.disabled = true;
+                aiSendBtn.classList.add('opacity-50');
+
+                appendUserMessage(text);
+                const thinkingEl = showThinkingIndicator();
+
+                try {
+                    const aiReplyText = await callGeminiWithRetry(text);
+                    if (thinkingEl && thinkingEl.parentNode) thinkingEl.parentNode.removeChild(thinkingEl);
+                    const qty = detectRecommendedQuantityFromText(text, aiReplyText);
+                    const htmlReply = formatAiResponseToHtml(aiReplyText);
+                    appendBotMessage(htmlReply, qty);
+                } catch (err) {
+                    if (thinkingEl && thinkingEl.parentNode) thinkingEl.parentNode.removeChild(thinkingEl);
+                    detectRecommendedQuantityFromText(text, '');
+                    const fallbackHtml = localFallbackReasonAndReply(text);
+                    appendBotMessage(fallbackHtml, aiMemory.recommendedPaidQty);
+                } finally {
+                    updateDynamicChips(text);
+                    aiIsBusy = false;
+                    aiSendBtn.disabled = false;
+                    aiSendBtn.classList.remove('opacity-50');
+                }
+            }
+
+            function syncAiLanguage() {
+                const dict = AI_ENGINE_DATA[currentLang];
+                document.getElementById('ai-header-title').textContent = dict.title;
+                document.getElementById('ai-header-badge').textContent = dict.badge;
+                document.getElementById('ai-header-status').lastElementChild.textContent = dict.status;
+                aiInput.setAttribute('placeholder', dict.placeholder);
+                document.getElementById('ai-launcher-label').textContent = dict.launcher;
+                updateDynamicChips();
+                if (aiMessages.children.length === 0) {
+                    appendBotMessage(dict.welcome, aiMemory.recommendedPaidQty);
+                }
+            }
+
+            function openAiChat() {
+                aiIsOpen = true;
+                aiHasOpenedOnce = true;
+                aiNudgeBubble.classList.add('hidden');
+                aiChatWindow.classList.remove('hidden');
+                if (aiMessages.children.length === 0) {
+                    appendBotMessage(AI_ENGINE_DATA[currentLang].welcome, aiMemory.recommendedPaidQty);
+                }
+            }
+
+            function closeAiChat() {
+                aiIsOpen = false;
+                aiChatWindow.classList.add('hidden');
+                triggerInsistentNudge();
+            }
+
+            function triggerInsistentNudge() {
+                if (aiIsOpen) return;
+                const nudges = AI_ENGINE_DATA[currentLang].nudges;
+                aiNudgeText.textContent = nudges[nudgeCount % nudges.length];
+                nudgeCount++;
+                aiNudgeBubble.classList.remove('hidden');
+            }
+
+            aiLauncherBtn.addEventListener('click', () => {
+                if (aiIsOpen) closeAiChat();
+                else openAiChat();
+            });
+
+            aiCloseBtn.addEventListener('click', closeAiChat);
+            aiNudgeBubble.addEventListener('click', (e) => {
+                if (e.target === aiNudgeClose) return;
+                openAiChat();
+            });
+            aiNudgeClose.addEventListener('click', (e) => {
+                e.stopPropagation();
+                aiNudgeBubble.classList.add('hidden');
+            });
+
+            aiForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const val = aiInput.value.trim();
+                if (!val || aiIsBusy) return;
+                aiInput.value = '';
+                handleUserInput(val);
+            });
+
+            langButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    aiMessages.innerHTML = '';
+                    geminiChatHistory = [];
+                    syncAiLanguage();
+                });
+            });
+
+            syncAiLanguage();
+
+            // Apertura automática a los 4 segundos + recordatorios insistentes periódicos
+            setTimeout(() => {
+                if (!aiHasOpenedOnce) {
+                    openAiChat();
+                }
+            }, 4000);
+
+            setInterval(() => {
+                if (!aiIsOpen) {
+                    triggerInsistentNudge();
+                }
+            }, 22000);
+        });
+    </script>
+</body>
+</html>
