@@ -4,12 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="Ksyst-Rn7Oa_aEM517qGt1tUB5cTGM2RJWIrpigj9DI" />
-    <title>Sorteo Fin de Curso · 4º ESO Escola IPSE Barcelona</title>
-    <!-- Favicon personalizado del sorteo para la pestaña del navegador -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230f172a'/%3E%3Crect x='10' y='16' width='44' height='32' rx='6' fill='%23fbbf24'/%3E%3Ccircle cx='10' cy='32' r='5' fill='%230f172a'/%3E%3Ccircle cx='54' cy='32' r='5' fill='%230f172a'/%3E%3Ctext x='32' y='37' text-anchor='middle' font-family='sans-serif' font-weight='900' font-size='15' fill='%230f172a'%3EIPSE%3C/text%3E%3C/svg%3E">
-    <meta name="description" content="Participa por 3 € en el sorteo oficial de la ONCE del 24 de junio con Carlos, Ángel, Albert, Walter y Claudio (4º ESO Escola IPSE Barcelona). Elige entre Crucero para 2, PC Mac, iPhone, PS5 y más.">
-    <!-- Etiquetas Open Graph para previsualización enriquecida en WhatsApp y redes -->
+    <title>Sorteo Viaje Fin de Curso · 4º ESO Escola IPSE Barcelona</title>
+    <meta name="application-name" content="Sorteo Viaje Fin de Curso · Escola IPSE">
+    <!-- Favicon optimizado para navegadores y Google Search (múltiplo de 48px) -->
+    <link rel="icon" type="image/svg+xml" sizes="96x96" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96' viewBox='0 0 96 96'%3E%3Crect width='96' height='96' rx='24' fill='%230f172a'/%3E%3Crect x='14' y='24' width='68' height='48' rx='10' fill='%23fbbf24'/%3E%3Ccircle cx='14' cy='48' r='8' fill='%230f172a'/%3E%3Ccircle cx='82' cy='48' r='8' fill='%230f172a'/%3E%3Ctext x='48' y='55' text-anchor='middle' font-family='sans-serif' font-weight='900' font-size='22' fill='%230f172a'%3EIPSE%3C/text%3E%3C/svg%3E">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 96 96'%3E%3Crect width='96' height='96' rx='24' fill='%230f172a'/%3E%3Crect x='14' y='24' width='68' height='48' rx='10' fill='%23fbbf24'/%3E%3Ctext x='48' y='55' text-anchor='middle' font-family='sans-serif' font-weight='900' font-size='22' fill='%230f172a'%3EIPSE%3C/text%3E%3C/svg%3E">
+    <meta name="description" content="🎟️ Participa por 3 € (cada 6 tickets, 1 GRATIS) en el sorteo oficial de la ONCE del 24 de junio con Carlos, Ángel, Albert, Walter y Claudio (4º ESO Escola IPSE Barcelona). Elige entre Crucero para 2, PC Mac, iPhone, PS5 y más.">
+    <!-- Datos estructurados oficiales para que Google muestre el nombre del sorteo en lugar de 'GitHub Pages documentation' -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Sorteo Viaje Fin de Curso · Escola IPSE",
+      "alternateName": ["Sorteo 4º ESO Escola IPSE Barcelona", "Viaje Fin de Curso Escola IPSE"],
+      "url": "https://carlosguixabcn-tech.github.io/sorteo-ipse/"
+    }
+    </script>
+    <!-- Etiquetas Open Graph para previsualización enriquecida en Google, WhatsApp y redes -->
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Sorteo Viaje Fin de Curso · Escola IPSE">
     <meta property="og:title" content="Sorteo Viaje Fin de Curso · 4º ESO Escola IPSE Barcelona">
     <meta property="og:description" content="Mira con esperanza al 24 de junio con la ONCE: por 3 € (cada 6 tickets, 1 GRATIS) elige entre Crucero para 2, PC Mac, iPhone, PS5 y más.">
     <meta property="og:url" content="https://carlosguixabcn-tech.github.io/sorteo-ipse/">
@@ -1758,12 +1771,10 @@
             const shareUrlHint = document.getElementById('share-url-hint');
 
             function detectPublicUrl() {
-                // 1. Si hay un enlace configurado manualmente en CONFIG_SORTEO o guardado por el usuario
                 const savedUrl = (localStorage.getItem('ipse_public_url') || CONFIG_SORTEO.urlOficial || '').trim();
                 if (savedUrl && /^https?:\/\//i.test(savedUrl)) {
                     return savedUrl;
                 }
-                // 2. Si la página ya está alojada en un dominio web público real (Netlify, GitHub Pages, dominio propio...)
                 try {
                     const loc = window.location;
                     const isRealWebHost = (loc.protocol === 'http:' || loc.protocol === 'https:') &&
@@ -1986,10 +1997,8 @@
             let aiIsBusy = false;
             let nudgeCount = 0;
 
-            // Historial multi-turno para Gemini API
             let geminiChatHistory = [];
 
-            // Memoria persistente de la conversación (compartida con respaldo local)
             const aiMemory = {
                 preferredPrize: null,
                 recommendedPaidQty: 6,
@@ -1999,7 +2008,6 @@
                 usedOpeners: new Set()
             };
 
-            // Cargar clave opcional guardada por el administrador en localStorage
             const savedCustomApiKey = localStorage.getItem('ipse_gemini_api_key') || '';
             if (savedCustomApiKey) {
                 aiApiKeyInput.value = savedCustomApiKey;
@@ -2060,7 +2068,6 @@
                 return wrapper;
             }
 
-            // Formatea respuesta de texto plano/markdown ligero de Gemini a HTML seguro y limpio
             function formatAiResponseToHtml(rawText) {
                 const escaped = rawText
                     .replace(/&/g, '&amp;')
@@ -2076,11 +2083,9 @@
                 return paragraphs.join('');
             }
 
-            // Extrae cantidad de tickets sugerida de la conversación para actualizar el botón directo
             function detectRecommendedQuantityFromText(userText, replyText) {
                 const combined = `${userText} ${replyText}`.toLowerCase();
 
-                // Detectar premios favoritos
                 const prizeMap = [
                     { keys: ['crucero', 'creuer', 'cruise', 'barco', 'vaixell'], label: currentLang === 'ca' ? 'Creuer per a 2' : currentLang === 'en' ? 'Cruise for 2' : 'Crucero para 2' },
                     { keys: ['mac', 'apple', 'portatil', 'ordenador', 'ordinador', 'laptop'], label: 'PC Mac' },
@@ -2098,7 +2103,6 @@
                     }
                 }
 
-                // Detectar patrón "X tickets pagados" o "X boletos"
                 const paidMatch = combined.match(/(\d{1,3})\s*(?:tickets?\s*pagados|tiquets?\s*pagats|paid\s*tickets?|boletos?\s*pagados)/);
                 if (paidMatch) {
                     const q = Math.max(1, Math.min(200, parseInt(paidMatch[1], 10)));
@@ -2108,7 +2112,6 @@
                     return q;
                 }
 
-                // Detectar mención explícita de cantidad en la pregunta del usuario
                 const userClean = userText.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
                 const groupMatch = userClean.match(/(?:somos|som|we are|entre)\s+(\d{1,2})\s*(?:amigos|amics|friends|personas|persones|people)?/);
                 const perPersonEuroMatch = userClean.match(/(\d{1,3})\s*(?:€|euros?|eur)\s*(?:cada|cadascu|each|por persona|per persona)/);
@@ -2175,9 +2178,6 @@
                 aiMessages.scrollTop = aiMessages.scrollHeight;
             }
 
-            // =========================================================
-            // MOTOR 1: LLAMADA REAL A GEMINI API (MULTI-TURNO + SYSTEM PROMPT)
-            // =========================================================
             function buildSystemInstruction() {
                 return `Eres el asistente virtual oficial, carismático, esperanzador y muy persuasivo de la rifa del viaje de fin de curso de 4º de ESO de l'Escola IPSE (Barcelona).
 
@@ -2248,15 +2248,11 @@ TU PERSONALIDAD Y FORMA DE RESPONDER:
                 }
             }
 
-            // =========================================================
-            // MOTOR 2: RESPALDO LOCAL AVANZADO (SIN DEPENDENCIA EXTERNA)
-            // =========================================================
             function localFallbackReasonAndReply(rawText) {
                 aiMemory.turnCount++;
                 const clean = rawText.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
                 const sections = [];
 
-                // Comparativas inteligentes entre premios
                 const mentionsMac = clean.includes('mac') || clean.includes('portatil') || clean.includes('ordenador');
                 const mentionsPs5 = clean.includes('ps5') || clean.includes('playstation') || clean.includes('xbox') || clean.includes('consola');
                 const mentionsCruise = clean.includes('crucero') || clean.includes('creuer') || clean.includes('cruise') || clean.includes('viaje');
@@ -2273,7 +2269,6 @@ TU PERSONALIDAD Y FORMA DE RESPONDER:
                     }
                 }
 
-                // Matemáticas de grupos y presupuestos
                 const groupMatch = clean.match(/(?:somos|som|we are|entre)\s+(\d{1,2})\s*(?:amigos|amics|friends|personas|persones|people)?/);
                 const perPersonEuroMatch = clean.match(/(\d{1,3})\s*(?:€|euros?|eur)\s*(?:cada|cadascu|each|por persona|per persona)/);
 
@@ -2390,7 +2385,6 @@ TU PERSONALIDAD Y FORMA DE RESPONDER:
                 return sections.map(s => `<p>${s}</p>`).join('');
             }
 
-            // Chips dinámicos que evolucionan según la conversación
             function updateDynamicChips(lastUserText = '') {
                 const lower = lastUserText.toLowerCase();
                 let dynamicList;
@@ -2546,7 +2540,6 @@ TU PERSONALIDAD Y FORMA DE RESPONDER:
 
             syncAiLanguage();
 
-            // Apertura automática a los 4 segundos + recordatorios insistentes periódicos
             setTimeout(() => {
                 if (!aiHasOpenedOnce) {
                     openAiChat();
